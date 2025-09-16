@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout title="Recursos Útiles - Quiet the Mind">
+  <Hero
+    title="Recursos útiles 📚"
+    subtitle="Si querés profundizar, estos recursos pueden ser un buen comienzo"
+  />
+
+  <Section
+    title="Libros recomendados 📖"
+    subtitle="Algunos libros que pueden ayudarte a profundizar en el tema"
+  >
+    <div class="grid md:grid-cols-2 gap-6">
+      <Card
+        title="El poder del ahora"
+        icon="📘"
+        description="Por Eckhart Tolle - Una guía para vivir en el presente y liberarse de pensamientos compulsivos."
+      />
+      <Card
+        title="Mindfulness: guía práctica"
+        icon="📗"
+        description="Por Mark Williams - Técnicas de atención plena para la gestión de pensamientos y emociones."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="Podcasts y Videos 🎧"
+    bgColor="bg-serene-blue/5"
+    subtitle="Sobre meditación y gestión de la ansiedad"
+  >
+    <div class="max-w-4xl mx-auto">
+      <div class="space-y-6">
+        <Card
+          title="Podcasts de meditación"
+          icon="🎧"
+          description="Busca podcasts que te enseñen técnicas de mindfulness y relajación."
+        />
+        <Card
+          title="Videos sobre ansiedad"
+          icon="🎬"
+          description="Contenido educativo sobre gestión de pensamientos y emociones difíciles."
+        />
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="Profesionales 👨‍⚕️"
+    bgColor="bg-gradient-to-br from-serene-blue/10 to-calm-green/10"
+    centerContent={true}
+    subtitle="Hablar con un psicólogo puede ser de gran ayuda si los pensamientos afectan tu vida diaria"
+  >
+    <div class="max-w-4xl mx-auto space-y-8">
+      <p class="text-lg text-gray-700 text-center">
+        Si los pensamientos intrusivos interfieren significativamente con tu vida cotidiana, considerá buscar ayuda profesional. No hay nada de malo en pedir apoyo.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <Card
+          title="Psicólogos especializados"
+          icon="👩‍⚕️"
+          variant="highlighted"
+          description="Profesionales entrenados en el tratamiento de ansiedad y pensamientos intrusivos."
+        />
+        <Card
+          title="Terapia cognitivo-conductual"
+          icon="🧠"
+          variant="highlighted"
+          description="Un enfoque terapéutico muy efectivo para este tipo de dificultades."
+        />
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="Buscar ayuda es valiente 💖"
+    bgColor="bg-gradient-to-br from-light-coral/20 to-calm-green/20"
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto">
+      <Card
+        title="No tenés que hacerlo solo"
+        icon="💪"
+        variant="minimal"
+        className="text-center"
+      >
+        <p class="text-lg text-gray-700 mb-6">
+          Pedir ayuda cuando la necesitás es un acto de autocompasión y fortaleza. Los profesionales de la salud mental están ahí para acompañarte en este proceso.
+        </p>
+        <div class="flex justify-center space-x-4">
+          <Button href="/estrategias" variant="primary">
+            Ver estrategias de autoayuda
+          </Button>
+          <Button href="/cierre" variant="secondary">
+            Mensaje inspirador
+          </Button>
+        </div>
+      </Card>
+    </div>
+  </Section>
+</Layout>

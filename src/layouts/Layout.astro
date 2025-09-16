@@ -1,0 +1,384 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Quiet the Mind - Gestiona tus pensamientos intrusivos de forma saludable",
+} = Astro.props;
+
+// Get current path for active state
+const currentPath = Astro.url.pathname;
+
+// Navigation items
+const navItems = [
+  { href: "/", label: "Inicio", icon: "🏠" },
+  { href: "/tipos", label: "Tipos", icon: "💭" },
+  { href: "/causas", label: "Causas", icon: "🤔" },
+  { href: "/estrategias", label: "Estrategias", icon: "🌱" },
+  { href: "/mitos", label: "Mitos", icon: "✨" },
+  { href: "/recursos", label: "Recursos", icon: "📚" }
+];
+
+// Helper function to check if link is active
+function isActive(href: string): boolean {
+  if (href === "/" && currentPath === "/") return true;
+  if (href !== "/" && currentPath.startsWith(href)) return true;
+  return false;
+}
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-cream text-gray-900 font-body overflow-x-hidden">
+    <div class="min-h-screen flex flex-col w-full">
+      <!-- Enhanced Header -->
+      <header
+        class="bg-cream/98 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-serene-blue/15"
+      >
+        <nav class="container mx-auto px-6 py-5 max-w-7xl">
+          <div class="flex items-center justify-between">
+            <!-- Enhanced Logo -->
+            <div class="flex items-center space-x-3 group">
+              <div class="text-3xl transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
+                🧘‍♂️
+              </div>
+              <div>
+                <h1 class="text-2xl font-heading font-bold text-serene-blue leading-tight">
+                  Quiet the Mind
+                </h1>
+                <p class="text-xs text-gray-600 font-medium">
+                  Bienestar mental
+                </p>
+              </div>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex items-center space-x-1 bg-white/70 backdrop-blur-sm rounded-full px-2 py-2 shadow-md">
+              {navItems.map((item) => (
+                <a
+                  href={item.href}
+                  class={`
+                    relative px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300
+                    ${isActive(item.href)
+                      ? 'bg-serene-blue text-white shadow-lg shadow-serene-blue/30 transform scale-105'
+                      : 'text-gray-700 hover:text-serene-blue hover:bg-serene-blue/8 hover:scale-102'
+                    }
+                  `}
+                >
+                  <span class="flex items-center space-x-1">
+                    <span class="text-xs opacity-70">{item.icon}</span>
+                    <span>{item.label}</span>
+                  </span>
+                  {isActive(item.href) && (
+                    <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-white rounded-full"></div>
+                  )}
+                </a>
+              ))}
+            </div>
+
+            <!-- Mobile menu button -->
+            <button
+              id="mobile-menu-button"
+              class="lg:hidden p-3 rounded-full hover:bg-serene-blue/10 transition-all duration-200 group"
+            >
+              <svg
+                class="w-6 h-6 text-serene-blue transition-transform duration-200 group-hover:scale-110"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                  class="transition-all duration-300"
+                ></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Enhanced Mobile menu -->
+          <div
+            id="mobile-menu"
+            class="hidden lg:hidden mt-6 pb-6 border-t border-serene-blue/20"
+          >
+            <div class="grid grid-cols-2 gap-3 pt-6">
+              {navItems.map((item) => (
+                <a
+                  href={item.href}
+                  class={`
+                    flex items-center space-x-2 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-200
+                    ${isActive(item.href)
+                      ? 'bg-serene-blue text-white shadow-md'
+                      : 'text-gray-700 hover:text-serene-blue hover:bg-serene-blue/5'
+                    }
+                  `}
+                >
+                  <span class="text-lg">{item.icon}</span>
+                  <span>{item.label}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Main Content -->
+      <main class="flex-grow w-full overflow-x-hidden">
+        <slot />
+      </main>
+
+      <!-- Enhanced Footer -->
+      <footer class="bg-gradient-to-br from-serene-blue/8 via-calm-green/6 to-serene-blue/8 border-t border-serene-blue/20">
+        <div class="container mx-auto px-6 py-12 max-w-7xl">
+
+          <!-- Main Footer Content -->
+          <div class="grid md:grid-cols-3 gap-8 mb-8">
+
+            <!-- Brand Section -->
+            <div class="space-y-4">
+              <div class="flex items-center space-x-3">
+                <span class="text-2xl">🧘‍♂️</span>
+                <span class="font-heading font-bold text-xl text-serene-blue">
+                  Quiet the Mind
+                </span>
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Una plataforma dedicada al bienestar mental, ofreciendo información y herramientas para gestionar pensamientos intrusivos de forma saludable. ✨
+              </p>
+              <div class="flex space-x-3">
+                <div class="w-2 h-2 bg-serene-blue rounded-full"></div>
+                <div class="w-2 h-2 bg-calm-green rounded-full"></div>
+                <div class="w-2 h-2 bg-soft-yellow rounded-full"></div>
+                <div class="w-2 h-2 bg-light-coral rounded-full"></div>
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="space-y-4">
+              <h3 class="font-heading font-semibold text-gray-800 text-lg">
+                Navegación
+              </h3>
+              <div class="grid grid-cols-2 gap-2">
+                {navItems.map((item) => (
+                  <a
+                    href={item.href}
+                    class="flex items-center space-x-2 text-sm text-gray-600 hover:text-serene-blue transition-colors duration-200 py-1"
+                  >
+                    <span class="text-xs opacity-70">{item.icon}</span>
+                    <span>{item.label}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <!-- Contact & Info -->
+            <div class="space-y-4">
+              <h3 class="font-heading font-semibold text-gray-800 text-lg">
+                Información
+              </h3>
+              <div class="space-y-3 text-sm">
+                <div class="flex items-start space-x-2">
+                  <span class="text-serene-blue mt-0.5">💡</span>
+                  <span class="text-gray-600">Contenido informativo y educativo</span>
+                </div>
+                <div class="flex items-start space-x-2">
+                  <span class="text-serene-blue mt-0.5">⚠️</span>
+                  <span class="text-gray-600">No sustituye consulta profesional</span>
+                </div>
+                <div class="flex items-start space-x-2">
+                  <span class="text-serene-blue mt-0.5">🔒</span>
+                  <span class="text-gray-600">Información confidencial y segura</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Border -->
+          <div class="border-t border-serene-blue/20 pt-6">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              <div class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-xs text-gray-600">
+                <span class="font-medium">© 2025 Quiet the Mind</span>
+                <span class="hidden md:inline">•</span>
+                <span>By Agustín Marquardt</span>
+                <span class="hidden md:inline">•</span>
+                <span>Desarrollado con ❤️ para el bienestar mental</span>
+              </div>
+
+              <!-- Scroll to top button -->
+              <button
+                id="scroll-to-top"
+                class="p-2 bg-serene-blue/10 hover:bg-serene-blue/20 rounded-full transition-all duration-200 hover:scale-110 group"
+                aria-label="Volver arriba"
+              >
+                <svg class="w-4 h-4 text-serene-blue group-hover:text-serene-blue transform group-hover:-translate-y-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Mobile menu toggle with enhanced animation
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton?.addEventListener("click", () => {
+        const isHidden = mobileMenu?.classList.contains("hidden");
+
+        if (isHidden) {
+          mobileMenu?.classList.remove("hidden");
+          mobileMenu?.classList.add("animate-fade-in");
+        } else {
+          mobileMenu?.classList.add("hidden");
+          mobileMenu?.classList.remove("animate-fade-in");
+        }
+      });
+
+      // Scroll to top functionality
+      const scrollToTopButton = document.getElementById("scroll-to-top");
+
+      scrollToTopButton?.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+
+      // Show/hide scroll to top button
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          scrollToTopButton?.classList.remove("opacity-0");
+          scrollToTopButton?.classList.add("opacity-100");
+        } else {
+          scrollToTopButton?.classList.add("opacity-0");
+          scrollToTopButton?.classList.remove("opacity-100");
+        }
+      });
+
+      // Enhanced scroll animation
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+          }
+        });
+      }, observerOptions);
+
+      // Auto-add animation classes and observe elements
+      document.addEventListener("DOMContentLoaded", () => {
+        // Add animation classes to cards and sections
+        document
+          .querySelectorAll('.card, [class*="Card"], section')
+          .forEach((el, index) => {
+            el.classList.add("animate-on-scroll");
+            el.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(el);
+          });
+
+        // Add subtle entrance animation to navigation
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach((link, index) => {
+          link.style.animationDelay = `${index * 0.1}s`;
+          link.classList.add('animate-fade-in');
+        });
+      });
+
+      // Add hover sound effect (optional - subtle UI enhancement)
+      document.querySelectorAll('a, button').forEach(element => {
+        element.addEventListener('mouseenter', () => {
+          element.style.transform = 'translateY(-1px)';
+        });
+
+        element.addEventListener('mouseleave', () => {
+          element.style.transform = 'translateY(0)';
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  @import "../styles/global.css";
+
+  /* Enhanced animations for header */
+  @keyframes animate-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: animate-fade-in 0.6s ease-out forwards;
+  }
+
+  /* Smooth scale utility */
+  .hover\:scale-102:hover {
+    transform: scale(1.02);
+  }
+
+  /* Custom scrollbar for better visual harmony */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-cream);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--color-serene-blue), var(--color-calm-green));
+    border-radius: 10px;
+    border: 1px solid var(--color-cream);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    box-shadow: 0 0 6px rgba(74, 144, 226, 0.3);
+  }
+
+  /* Enhanced focus styles for accessibility */
+  :focus-visible {
+    outline: 2px solid var(--color-serene-blue);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  /* Subtle page transition */
+  body {
+    animation: pageLoad 0.8s ease-out;
+  }
+
+  @keyframes pageLoad {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>

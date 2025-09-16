@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout title="Tipos de Pensamientos Intrusivos - Quiet the Mind">
+  <Hero
+    title="Tipos de pensamientos intrusivos 💭"
+    subtitle="Existen diferentes formas en que los pensamientos intrusivos pueden manifestarse"
+  />
+
+  <Section
+    title="De ansiedad 😰"
+    subtitle="Relacionados con miedos o preocupaciones"
+  >
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-6">
+        <Card
+          title="Preocupaciones constantes"
+          icon="😰"
+          description="¿Y si algo malo pasa? Miedos sobre situaciones futuras o consecuencias negativas."
+        />
+        <Card
+          title="Escenarios catastróficos"
+          icon="🌪️"
+          description="Imaginar los peores escenarios posibles en situaciones cotidianas."
+        />
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="Repetitivos 🔄"
+    bgColor="bg-serene-blue/5"
+    subtitle="Dudas constantes sobre cosas cotidianas"
+  >
+    <div class="grid md:grid-cols-3 gap-6">
+      <Card
+        title="Dudas cotidianas"
+        icon="❓"
+        description="¿Cerré bien la puerta? ¿Apagué la estufa? Preguntas que se repiten una y otra vez."
+      />
+      <Card
+        title="Verificación constante"
+        icon="🔍"
+        description="Necesidad de revisar las mismas cosas múltiples veces para sentirse tranquilo."
+      />
+      <Card
+        title="Bucles mentales"
+        icon="🔄"
+        description="Pensamientos que dan vueltas sin encontrar una respuesta satisfactoria."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="Extraños o incómodos 😳"
+    subtitle="Imágenes o ideas que no reflejan lo que realmente pensamos o deseamos"
+  >
+    <div class="grid md:grid-cols-2 gap-8">
+      <Card
+        title="Contenido perturbador"
+        icon="😰"
+        description="Imágenes o ideas que aparecen sin quererlas y que pueden asustarnos por su contenido."
+      />
+      <Card
+        title="Contradicen nuestros valores"
+        icon="❓"
+        description="Pensamientos que van en contra de lo que realmente creemos o deseamos."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="Lo importante es recordar 💡"
+    bgColor="bg-calm-green/5"
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto space-y-8">
+      <Card
+        title="👉 Recordá: un pensamiento no define quién sos."
+        icon="✨"
+        variant="highlighted"
+        className="text-center"
+      >
+        <p class="text-gray-700 mb-6">
+          Todos estos tipos de pensamientos son normales y comunes. Lo que importa no es el contenido del pensamiento, sino cómo nos relacionamos con él. Tener un pensamiento no significa que lo deseemos o que refleje nuestra verdadera naturaleza.
+        </p>
+      </Card>
+    </div>
+  </Section>
+
+  <Section
+    title="Continúa explorando 🌱"
+    bgColor="bg-gradient-to-br from-soft-yellow/20 to-light-coral/20"
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto space-y-8">
+      <div class="flex justify-center space-x-4">
+        <Button href="/causas" variant="primary">
+          ¿Por qué aparecen?
+        </Button>
+        <Button href="/estrategias" variant="secondary">
+          Cómo gestionarlos
+        </Button>
+      </div>
+    </div>
+  </Section>
+</Layout>

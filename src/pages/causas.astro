@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout title="¿Por qué aparecen? - Quiet the Mind">
+  <Hero
+    title="¿Por qué aparecen? 🤔"
+    subtitle="Los pensamientos intrusivos tienen mucho que ver con el funcionamiento automático de nuestro cerebro"
+  />
+
+  <Section
+    title="Razones frecuentes 🧠"
+    subtitle="Algunas razones frecuentes por las que aparecen:"
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto">
+      <div class="space-y-6">
+        <Card
+          title="Estrés o ansiedad acumulada"
+          icon="😤"
+          description="Cuando estamos bajo presión, nuestra mente puede generar más pensamientos automáticos."
+        />
+        <Card
+          title="Cansancio físico o mental"
+          icon="😴"
+          description="Cuando estamos agotados, es más difícil filtrar los pensamientos que aparecen."
+        />
+        <Card
+          title="Situaciones de incertidumbre"
+          icon="❓"
+          description="En momentos de cambio o duda, la mente busca respuestas y genera más ideas."
+        />
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="El funcionamiento natural de la mente 🧠"
+    bgColor="bg-serene-blue/5"
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto space-y-8">
+      <Card
+        title="Tu cerebro está haciendo lo que hace siempre"
+        icon="🧠"
+        variant="highlighted"
+        className="text-center"
+      >
+        <p class="text-gray-700 mb-4">
+          El funcionamiento natural de la mente, que genera pensamientos de manera constante.
+        </p>
+        <p class="text-gray-700">
+          No es que "algo esté mal" con vos: simplemente, tu cerebro está haciendo lo que hace siempre… solo que a veces de manera incómoda.
+        </p>
+      </Card>
+    </div>
+  </Section>
+
+
+
+  <Section
+    title="Lo más importante 🌟"
+    bgColor="bg-soft-yellow/20"
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto">
+      <Card
+        title="Es completamente normal"
+        icon="🤗"
+        variant="minimal"
+        className="text-center"
+      >
+        <p class="text-lg text-gray-700 mb-6">
+          Tener pensamientos intrusivos es parte del funcionamiento normal del cerebro humano. No significa que algo esté mal contigo, simplemente es como funciona nuestra mente.
+        </p>
+        <div class="flex justify-center space-x-4">
+          <Button href="/estrategias" variant="primary">
+            Aprende a gestionarlos
+          </Button>
+          <Button href="/mitos" variant="secondary">
+            Desmitifica creencias
+          </Button>
+        </div>
+      </Card>
+    </div>
+  </Section>
+</Layout>

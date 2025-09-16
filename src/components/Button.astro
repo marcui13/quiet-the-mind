@@ -1,0 +1,68 @@
+---
+export interface Props {
+  variant?: 'primary' | 'secondary' | 'outline';
+  size?: 'small' | 'medium' | 'large';
+  href?: string;
+  className?: string;
+}
+
+const {
+  variant = 'primary',
+  size = 'medium',
+  href,
+  className = ""
+} = Astro.props;
+
+const variantClasses = {
+  primary: "bg-gradient-to-r from-serene-blue to-serene-blue/90 text-white hover:from-serene-blue/90 hover:to-serene-blue border-serene-blue shadow-lg shadow-serene-blue/25 hover:shadow-xl hover:shadow-serene-blue/40",
+  secondary: "bg-gradient-to-r from-calm-green to-calm-green/90 text-white hover:from-calm-green/90 hover:to-calm-green border-calm-green shadow-lg shadow-calm-green/25 hover:shadow-xl hover:shadow-calm-green/40",
+  outline: "bg-transparent text-serene-blue border-2 border-serene-blue hover:bg-serene-blue hover:text-white hover:shadow-lg hover:shadow-serene-blue/25"
+};
+
+const sizeClasses = {
+  small: "px-6 py-3 text-sm",
+  medium: "px-8 py-4 text-base",
+  large: "px-10 py-5 text-lg"
+};
+
+const baseClasses = `
+  group relative inline-flex items-center justify-center
+  font-heading font-bold
+  border rounded-full
+  transition-all duration-500 ease-out
+  hover-lift hover:scale-105
+  focus:outline-none focus:ring-2 focus:ring-serene-blue/50 focus:ring-offset-2
+  overflow-hidden
+  ${variantClasses[variant]}
+  ${sizeClasses[size]}
+  ${className}
+`;
+---
+
+{href ? (
+  <a href={href} class={baseClasses}>
+    <!-- Hover background effect -->
+    <div class="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+    <!-- Content -->
+    <span class="relative z-10 flex items-center space-x-2">
+      <slot />
+    </span>
+
+    <!-- Ripple effect -->
+    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-serene-blue/30 to-calm-green/30 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+  </a>
+) : (
+  <button class={baseClasses}>
+    <!-- Hover background effect -->
+    <div class="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+    <!-- Content -->
+    <span class="relative z-10 flex items-center space-x-2">
+      <slot />
+    </span>
+
+    <!-- Ripple effect -->
+    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-serene-blue/30 to-calm-green/30 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+  </button>
+)}

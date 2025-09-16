@@ -1,0 +1,47 @@
+---
+export interface Props {
+  alt?: string;
+  title?: string;
+  description?: string;
+  size?: 'small' | 'medium' | 'large';
+  className?: string;
+}
+
+const {
+  alt,
+  title,
+  description,
+  size = 'medium',
+  className = ""
+} = Astro.props;
+
+const displayTitle = alt || title;
+
+const sizeClasses = {
+  small: "w-32 h-32",
+  medium: "w-48 h-48",
+  large: "w-64 h-64"
+};
+---
+
+<div class={`
+  ${sizeClasses[size]}
+  bg-gradient-to-br from-serene-blue/10 to-calm-green/10
+  border-2 border-dashed border-serene-blue/30
+  rounded-xl
+  flex flex-col items-center justify-center
+  text-center p-4
+  hover-scale
+  transition-all duration-300
+  ${className}
+`}>
+  <div class="text-4xl mb-2">🎨</div>
+  <h4 class="font-heading font-medium text-sm text-gray-700 mb-1">
+    {displayTitle}
+  </h4>
+  {description && (
+    <p class="text-xs text-gray-500 leading-tight">
+      {description}
+    </p>
+  )}
+</div>

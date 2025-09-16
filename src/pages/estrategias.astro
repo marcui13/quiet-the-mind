@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout title="Estrategias de Gestión Saludable - Quiet the Mind">
+  <Hero
+    title="Cómo gestionarlos de forma saludable 🌱"
+    subtitle="Aunque no podemos evitar que aparezcan, sí podemos aprender a gestionarlos mejor"
+  />
+
+  <Section
+    title="Observar sin juzgar 👁️"
+    subtitle="Reconocer el pensamiento y dejarlo pasar"
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto">
+      <div class="space-y-6">
+        <Card
+          title="Reconoce el pensamiento"
+          icon="👀"
+          description="Nota que está ahí sin tratar de cambiarlo o eliminarlo inmediatamente."
+        />
+        <Card
+          title="No te identifiques con él"
+          icon="🎭"
+          description="Recorda que tener un pensamiento no significa que seas ese pensamiento."
+        />
+        <Card
+          title="Deja que pase"
+          icon="🌬️"
+          description="Como las nubes en el cielo, los pensamientos vienen y van naturalmente."
+        />
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="Mindfulness 🧘"
+    bgColor="bg-serene-blue/5"
+    subtitle="Traer la atención al presente a través de la respiración o los sentidos"
+  >
+    <div class="grid md:grid-cols-3 gap-6">
+      <Card
+        title="Respiración consciente"
+        icon="🌬️"
+        variant="highlighted"
+        description="Enfoca tu atención en la respiración para volver al momento presente."
+      />
+      <Card
+        title="Atención a los sentidos"
+        icon="👂"
+        variant="highlighted"
+        description="Conecta con lo que ves, escuchas, sientes, hueles o gustas ahora mismo."
+      />
+      <Card
+        title="Ancla en el presente"
+        icon="⚓"
+        variant="highlighted"
+        description="Usa el momento presente como refugio cuando los pensamientos se intensifican."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="Journaling 📝"
+    subtitle="Escribir los pensamientos ayuda a sacarlos de la cabeza"
+  >
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div class="space-y-6">
+        <Card
+          title="Vacía tu mente en papel"
+          icon="✍️"
+          description="Escribí todo lo que pensás sin censura. No importa si tiene sentido."
+        />
+        <Card
+          title="Observa patrones"
+          icon="📊"
+          description="Con el tiempo podés identificar qué situaciones activan más pensamientos."
+        />
+        <Card
+          title="Libera la presión"
+          icon="🎈"
+          description="Al escribirlos, los pensamientos ya no necesitan dar vueltas en tu cabeza."
+        />
+      </div>
+      <div class="flex justify-center">
+        <div class="bg-gray-50 p-6 rounded-lg max-w-sm">
+          <h4 class="font-semibold mb-3">Ejercicio simple:</h4>
+          <p class="text-sm text-gray-600">Cada noche escribí durante 5 minutos sobre cualquier pensamiento que te haya molestado durante el día. No lo releas, solo escribí.</p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="Autocompasión 💖"
+    bgColor="bg-gradient-to-br from-light-coral/10 to-soft-yellow/10"
+    centerContent={true}
+    subtitle="Recordarte que tener un pensamiento no significa que te defina"
+  >
+    <div class="max-w-4xl mx-auto space-y-8">
+      <Card
+        title="Tratá a tu mente con amabilidad"
+        icon="🤗"
+        variant="minimal"
+        className="text-center"
+      >
+        <p class="text-gray-700 mb-4"
+          En lugar de juzgarte por tener pensamientos intrusivos, recordá que son parte normal de la experiencia humana. Hablá contigo mismo como le hablarías a un buen amigo que está pasando por lo mismo.
+        </p>
+      </Card>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <Card
+          title="Sé compasivo contigo mismo"
+          icon="💬"
+          description="'Es normal tener estos pensamientos. No soy raro ni malo por pensar esto.'"
+        />
+        <Card
+          title="Recorda la impermanencia"
+          icon="🌪️"
+          description="'Este pensamiento va a pasar, como todos los demás. No necesito hacer nada con él.'"
+        />
+      </div>
+    </div>
+  </Section>
+
+
+  <Section
+    title="Continúa explorando 🌱"
+    bgColor="bg-serene-blue/5"
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto space-y-8">
+      <p class="text-lg text-gray-700 text-center">
+        Estas estrategias te ayudarán a desarrollar una relación más saludable con tus pensamientos. Recordá que la práctica hace la diferencia.
+      </p>
+
+      <div class="flex justify-center space-x-4">
+        <Button href="/mitos" variant="primary">
+          Desmitificar creencias
+        </Button>
+        <Button href="/recursos" variant="secondary">
+          Ver recursos profesionales
+        </Button>
+      </div>
+    </div>
+  </Section>
+</Layout>

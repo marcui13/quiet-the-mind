@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout title="Mensaje Inspirador - Quiet the Mind">
+  <Hero
+    title="Un recordatorio final 🌟"
+    subtitle="Los pensamientos intrusivos son parte de nuestra mente, pero no son más poderosos que vos"
+    bgGradient={true}
+  />
+
+  <Section
+    title="Con paciencia, práctica y amabilidad 🌱"
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto space-y-8">
+
+      <Card
+        title="Podés aprender a relacionarte con ellos de una manera más sana"
+        icon="🌟"
+        variant="minimal"
+        className="text-center"
+      >
+        <p class="text-xl text-gray-700 leading-relaxed mb-6">
+          Con paciencia, práctica y amabilidad hacia vos mismo, podés aprender a relacionarte con ellos de una manera más sana. 🌱✨
+        </p>
+      </Card>
+    </div>
+  </Section>
+
+  <Section
+    title="Recordá siempre ✨"
+    bgColor="bg-gradient-to-br from-serene-blue/10 to-calm-green/10"
+    centerContent={true}
+  >
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <Card
+          title="Sos normal"
+          icon="💖"
+          variant="highlighted"
+          description="Tener pensamientos intrusivos no te hace diferente. Es parte del funcionamiento natural de la mente."
+        />
+        <Card
+          title="No estás solo"
+          icon="🤝"
+          variant="highlighted"
+          description="Millones de personas experimentan lo mismo que vos, aunque no siempre se hable de ello."
+        />
+        <Card
+          title="Podés sanar"
+          icon="🌱"
+          variant="highlighted"
+          description="Con las herramientas adecuadas y paciencia, podés aprender a vivir en paz con tu mente."
+        />
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="Tu camino continúa 🛤️"
+    bgColor="bg-gradient-to-br from-light-coral/20 to-serene-blue/20"
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto">
+      <Card
+        title="La esperanza siempre está presente"
+        icon="🕊️"
+        variant="minimal"
+        className="text-center"
+      >
+        <p class="text-xl text-gray-700 leading-relaxed mb-8">
+          Cada día es una nueva oportunidad para practicar la compasión contigo mismo y aplicar lo que has aprendido. Recordá que el crecimiento toma tiempo, y está bien tener días mejores y días más difíciles.
+        </p>
+
+        <div class="space-y-6">
+          <p class="text-lg text-gray-600 italic">
+            "La mente es como el agua. Cuando está agitada, es difícil ver. Cuando está calmada, todo se vuelve claro."
+          </p>
+
+          <div class="flex justify-center space-x-4">
+            <Button href="/" variant="primary">
+              Volver al inicio
+            </Button>
+            <Button href="/recursos" variant="secondary">
+              Buscar más ayuda
+            </Button>
+          </div>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <Section
+    title="Un último abrazo 💌"
+    bgColor="bg-cream"
+    centerContent={true}
+  >
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="text-6xl mb-4">🌱</div>
+      <h3 class="font-heading font-semibold text-2xl text-gray-800 mb-4">
+        Sos más fuerte de lo que creés
+      </h3>
+      <p class="text-lg text-gray-700 mb-6">
+        Tu búsqueda de información y herramientas para mejorar muestra tu valentía y determinación. Seguí adelante con gentileza hacia vos mismo.
+      </p>
+      <div class="flex justify-center space-x-2 text-2xl">
+        🧘‍♂️ 💚 ✨ 🌈 🕊️
+      </div>
+    </div>
+  </Section>
+</Layout>

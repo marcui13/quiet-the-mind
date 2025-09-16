@@ -1,0 +1,179 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout title="Mitos y Realidades - Quiet the Mind">
+  <Hero
+    title="Mitos y Realidades"
+    subtitle="Desmitifica las creencias más comunes sobre los pensamientos intrusivos 💡"
+  />
+
+  <Section
+    title="Mito vs Realidad 🎭"
+    subtitle="<!-- Insert content here -->"
+    centerContent={true}
+  >
+    <div class="space-y-12 max-w-6xl mx-auto">
+
+      <!-- Mito 1 -->
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <Card
+          title="❌ MITO"
+          icon="🚫"
+          variant="default"
+        >
+          <p class="text-gray-700 font-medium">
+            "Si pienso algo malo, significa que lo deseo"
+          </p>
+          <p class="text-sm text-gray-600 mt-2">
+            <!-- Insert content here -->
+          </p>
+        </Card>
+        <Card
+          title="✅ REALIDAD"
+          icon="✨"
+          variant="highlighted"
+        >
+          <p class="text-gray-700 font-medium">
+            "Los pensamientos intrusivos van contra nuestros valores"
+          </p>
+          <p class="text-sm text-gray-600 mt-2">
+            <!-- Insert content here -->
+          </p>
+        </Card>
+      </div>
+
+      <!-- Mito 2 -->
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <Card
+          title="❌ MITO"
+          icon="🚫"
+          variant="default"
+        >
+          <p class="text-gray-700 font-medium">
+            "Solo las personas enfermas tienen estos pensamientos"
+          </p>
+          <p class="text-sm text-gray-600 mt-2">
+            <!-- Insert content here -->
+          </p>
+        </Card>
+        <Card
+          title="✅ REALIDAD"
+          icon="✨"
+          variant="highlighted"
+        >
+          <p class="text-gray-700 font-medium">
+            "Son universales y completamente normales"
+          </p>
+          <p class="text-sm text-gray-600 mt-2">
+            <!-- Insert content here -->
+          </p>
+        </Card>
+      </div>
+
+      <!-- Mito 3 -->
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <Card
+          title="❌ MITO"
+          icon="🚫"
+          variant="default"
+        >
+          <p class="text-gray-700 font-medium">
+            "Debo controlar todos mis pensamientos"
+          </p>
+          <p class="text-sm text-gray-600 mt-2">
+            <!-- Insert content here -->
+          </p>
+        </Card>
+        <Card
+          title="✅ REALIDAD"
+          icon="✨"
+          variant="highlighted"
+        >
+          <p class="text-gray-700 font-medium">
+            "Es imposible y contraproducente intentar controlarlos"
+          </p>
+          <p class="text-sm text-gray-600 mt-2">
+            <!-- Insert content here -->
+          </p>
+        </Card>
+      </div>
+
+    </div>
+  </Section>
+
+  <Section
+    title="Creencias dañinas comunes 💔"
+    bgColor="bg-serene-blue/5"
+  >
+    <div class="grid md:grid-cols-3 gap-6">
+      <Card
+        title={'Soy una mala persona'}
+        icon="😔"
+        description="<!-- Insert content here -->"
+      />
+      <Card
+        title={'Voy a perder el control'}
+        icon="😰"
+        description="<!-- Insert content here -->"
+      />
+      <Card
+        title={'Debería suprimirlos'}
+        icon="🔒"
+        description="<!-- Insert content here -->"
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="La verdad liberadora 🌟"
+    bgColor="bg-gradient-to-br from-soft-yellow/20 to-calm-green/20"
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto space-y-8">
+
+      <Card
+        title="La realidad es mucho más amable"
+        icon="💎"
+        variant="minimal"
+        className="text-center"
+      >
+        <p class="text-lg text-gray-700 mb-6">
+          Los pensamientos intrusivos no definen quién sos. Son simplemente actividad mental automática que todos experimentamos. Lo importante es cómo elegimos responder a ellos.
+        </p>
+      </Card>
+    </div>
+  </Section>
+
+
+  <Section
+    title="Continúa tu camino 🌱"
+    bgColor="bg-calm-green/5"
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto">
+      <Card
+        title="Ahora que conoces la verdad"
+        icon="🚪"
+        variant="minimal"
+        className="text-center"
+      >
+        <p class="text-gray-700 mb-6">
+          Con esta nueva perspectiva, podés relacionarte de manera más amable y compasiva con tus pensamientos intrusivos. Recordá: no son tu enemigo, son parte normal de ser humano.
+        </p>
+        <div class="flex justify-center space-x-4">
+          <Button href="/estrategias" variant="primary">
+            Aprende estrategias
+          </Button>
+          <Button href="/recursos" variant="secondary">
+            Busca ayuda profesional
+          </Button>
+        </div>
+      </Card>
+    </div>
+  </Section>
+</Layout>

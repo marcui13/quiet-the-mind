@@ -1,0 +1,42 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  bgColor?: string;
+  id?: string;
+  centerContent?: boolean;
+}
+
+const {
+  title,
+  subtitle,
+  bgColor = "bg-cream",
+  id,
+  centerContent = false
+} = Astro.props;
+---
+
+<section id={id} class={`py-20 md:py-24 ${bgColor} relative overflow-hidden`}>
+  <!-- Background decoration -->
+  <div class="absolute inset-0 opacity-30">
+    <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-serene-blue/5 to-transparent rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-calm-green/5 to-transparent rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="container mx-auto px-6 max-w-7xl relative z-10">
+    <div class={`mb-16 animate-on-scroll ${centerContent ? 'text-center max-w-4xl mx-auto' : 'max-w-5xl'}`}>
+      <h2 class="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-gray-800 mb-6 leading-tight">
+        {title}
+      </h2>
+      {subtitle && (
+        <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-medium">
+          {subtitle}
+        </p>
+      )}
+    </div>
+
+    <div class="animate-on-scroll">
+      <slot />
+    </div>
+  </div>
+</section>

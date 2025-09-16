@@ -1,0 +1,168 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Hero from "../../components/Hero.astro";
+import Section from "../../components/Section.astro";
+import Card from "../../components/Card.astro";
+import Button from "../../components/Button.astro";
+---
+
+<MainLayout title="Estrategias de Afrontamiento - Quiet the Mind">
+  <Header slot="header" />
+
+  <Hero
+    title="Estrategias Saludables de Afrontamiento 🌱"
+    subtitle="Técnicas prácticas para ayudarte a manejar los pensamientos intrusivos y reducir su impacto en tu vida diaria."
+  />
+
+  <Section
+    title="Técnicas Basadas en Mindfulness"
+    subtitle="Estas estrategias te ayudan a observar los pensamientos sin juzgarlos:"
+  >
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <Card
+        title="Observar y Etiquetar"
+        icon="👁️"
+        description="Simplemente nota el pensamiento y etiquétalo: 'Estoy teniendo el pensamiento de que...' Esto crea distancia entre tú y el pensamiento."
+      />
+      <Card
+        title="La Metáfora de las Nubes"
+        icon="☁️"
+        description="Imagina los pensamientos como nubes pasando por el cielo de tu mente. Van y vienen naturalmente sin tu control."
+      />
+      <Card
+        title="Respiración Consciente"
+        icon="🫁"
+        description="Enfócate en tu respiración cuando surjan pensamientos intrusivos. Esto te tranquiliza en el momento presente."
+      />
+      <Card
+        title="Escaneo Corporal"
+        icon="🧘‍♀️"
+        description="Nota las sensaciones físicas en tu cuerpo para cambiar la atención de los pensamientos angustiantes."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="Técnicas Cognitivas"
+    bgColor="bg-blue-50 dark:bg-gray-800"
+    subtitle="Formas de cambiar tu relación con los pensamientos:"
+  >
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <Card
+        title="Defusión de Pensamientos"
+        icon="🎭"
+        variant="highlighted"
+        description="Di el pensamiento con una voz graciosa o imagínalo en una pantalla de cine para reducir su impacto emocional."
+      />
+      <Card
+        title="La Técnica 5-4-3-2-1"
+        icon="🔢"
+        variant="highlighted"
+        description="Tranquilízate nombrando 5 cosas que ves, 4 que escuchas, 3 que tocas, 2 que hueles, 1 que saboreas."
+      />
+      <Card
+        title="Aceptación"
+        icon="🤝"
+        variant="highlighted"
+        description="Acepta que el pensamiento está ahí sin luchar contra él. La resistencia a menudo fortalece los pensamientos."
+      />
+      <Card
+        title="Reformular el Significado"
+        icon="🖼️"
+        variant="highlighted"
+        description="Recuerda que tener un pensamiento no significa nada sobre tu carácter o intenciones."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="Estrategias de Estilo de Vida"
+    subtitle="Apoyando tu salud mental a través de hábitos diarios:"
+  >
+    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <Card
+        title="Ejercicio Regular"
+        icon="🏃‍♀️"
+        description="La actividad física reduce el estrés y mejora el estado de ánimo, ayudando a manejar los pensamientos intrusivos."
+      />
+      <Card
+        title="Sueño Adecuado"
+        icon="😴"
+        description="7-9 horas de sueño de calidad apoyan la regulación emocional y la claridad mental."
+      />
+      <Card
+        title="Manejo del Estrés"
+        icon="🧘"
+        description="Practica técnicas de relajación, yoga o meditación para reducir los niveles generales de estrés."
+      />
+      <Card
+        title="Limitar Detonantes"
+        icon="🚫"
+        description="Identifica y minimiza la exposición a contenido o situaciones que desencadenan pensamientos intrusivos."
+      />
+      <Card
+        title="Apoyo Social"
+        icon="👥"
+        description="Conéctate con amigos comprensivos, familia o grupos de apoyo."
+      />
+      <Card
+        title="Ayuda Profesional"
+        icon="🩺"
+        description="Considera la terapia, especialmente TCC o TAC, que son efectivas para los pensamientos intrusivos."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="Técnicas de Emergencia"
+    bgColor="bg-red-50 dark:bg-red-900/10"
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto">
+      <Card
+        title="Cuando los Pensamientos se Sienten Abrumadores"
+        icon="🆘"
+        variant="minimal"
+        class="text-center border-red-200 dark:border-red-800"
+      >
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p class="font-semibold">
+            Si tienes pensamientos de autolesión o suicidio, por favor busca ayuda inmediatamente:
+          </p>
+          <div class="text-sm space-y-2">
+            <p>• Línea Nacional de Prevención del Suicidio (EE.UU.): 988</p>
+            <p>• Línea de Crisis por Texto: Envía CASA al 741741</p>
+            <p>• Servicios de Emergencia: 911</p>
+            <p>• En España: Teléfono de la Esperanza: 717 003 717</p>
+          </div>
+          <p>
+            Recuerda: No eres tus pensamientos, y mereces apoyo.
+          </p>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <Section
+    title="Sigue Aprendiendo"
+    centerContent={true}
+  >
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+        Manejar los pensamientos intrusivos es una habilidad que mejora con la práctica. Sé paciente y compasivo contigo mismo.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <Button href="/es/myths" variant="primary" size="lg">
+          Desmentir Mitos Comunes
+        </Button>
+        <Button href="/es/resources" variant="secondary" size="lg">
+          Encontrar Recursos
+        </Button>
+      </div>
+    </div>
+  </Section>
+
+  <Footer slot="footer" />
+</MainLayout>

@@ -1,38 +1,39 @@
 ---
 export interface Props {
   variant?: 'primary' | 'secondary' | 'outline';
-  size?: 'small' | 'medium' | 'large';
+  size?: 'sm' | 'md' | 'lg';
   href?: string;
-  className?: string;
+  class?: string;
 }
 
 const {
   variant = 'primary',
-  size = 'medium',
+  size = 'md',
   href,
-  className = ""
+  class: className = ""
 } = Astro.props;
 
 const variantClasses = {
-  primary: "bg-gradient-to-r from-serene-blue to-serene-blue/90 text-white hover:from-serene-blue/90 hover:to-serene-blue border-serene-blue shadow-lg shadow-serene-blue/25 hover:shadow-xl hover:shadow-serene-blue/40",
-  secondary: "bg-gradient-to-r from-calm-green to-calm-green/90 text-white hover:from-calm-green/90 hover:to-calm-green border-calm-green shadow-lg shadow-calm-green/25 hover:shadow-xl hover:shadow-calm-green/40",
-  outline: "bg-transparent text-serene-blue border-2 border-serene-blue hover:bg-serene-blue hover:text-white hover:shadow-lg hover:shadow-serene-blue/25"
+  primary: "bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 border-blue-600 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 dark:from-blue-500 dark:to-blue-600 dark:hover:from-blue-600 dark:hover:to-blue-700",
+  secondary: "bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 shadow-lg hover:shadow-xl",
+  outline: "bg-transparent text-blue-600 dark:text-blue-400 border-2 border-blue-600 dark:border-blue-400 hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white dark:hover:text-white hover:shadow-lg hover:shadow-blue-500/25"
 };
 
 const sizeClasses = {
-  small: "px-6 py-3 text-sm",
-  medium: "px-8 py-4 text-base",
-  large: "px-10 py-5 text-lg"
+  sm: "px-4 py-2 text-sm",
+  md: "px-6 py-3 text-base",
+  lg: "px-8 py-4 text-lg"
 };
 
 const baseClasses = `
-  group relative inline-flex items-center justify-center
-  font-heading font-bold
-  border rounded-full
-  transition-all duration-500 ease-out
-  hover-lift hover:scale-105
-  focus:outline-none focus:ring-2 focus:ring-serene-blue/50 focus:ring-offset-2
-  overflow-hidden
+  inline-flex items-center justify-center
+  font-medium
+  border rounded-lg
+  transition-all duration-300 ease-in-out
+  hover:scale-105 hover:-translate-y-0.5
+  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800
+  disabled:opacity-50 disabled:cursor-not-allowed
+  btn-animate
   ${variantClasses[variant]}
   ${sizeClasses[size]}
   ${className}
@@ -41,28 +42,10 @@ const baseClasses = `
 
 {href ? (
   <a href={href} class={baseClasses}>
-    <!-- Hover background effect -->
-    <div class="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-    <!-- Content -->
-    <span class="relative z-10 flex items-center space-x-2">
-      <slot />
-    </span>
-
-    <!-- Ripple effect -->
-    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-serene-blue/30 to-calm-green/30 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+    <slot />
   </a>
 ) : (
   <button class={baseClasses}>
-    <!-- Hover background effect -->
-    <div class="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-    <!-- Content -->
-    <span class="relative z-10 flex items-center space-x-2">
-      <slot />
-    </span>
-
-    <!-- Ripple effect -->
-    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-serene-blue/30 to-calm-green/30 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+    <slot />
   </button>
 )}

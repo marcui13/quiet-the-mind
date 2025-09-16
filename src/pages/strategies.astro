@@ -1,0 +1,167 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+import Button from "../components/Button.astro";
+---
+
+<MainLayout title="Coping Strategies - Quiet the Mind">
+  <Header slot="header" />
+
+  <Hero
+    title="Healthy Coping Strategies 🌱"
+    subtitle="Practical techniques to help you manage intrusive thoughts and reduce their impact on your daily life."
+  />
+
+  <Section
+    title="Mindfulness-Based Techniques"
+    subtitle="These strategies help you observe thoughts without judgment:"
+  >
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <Card
+        title="Observe and Label"
+        icon="👁️"
+        description="Simply notice the thought and label it: 'I'm having the thought that...' This creates distance between you and the thought."
+      />
+      <Card
+        title="The Clouds Metaphor"
+        icon="☁️"
+        description="Imagine thoughts as clouds passing through the sky of your mind. They come and go naturally without your control."
+      />
+      <Card
+        title="Mindful Breathing"
+        icon="🫁"
+        description="Focus on your breath when intrusive thoughts arise. This grounds you in the present moment."
+      />
+      <Card
+        title="Body Scan"
+        icon="🧘‍♀️"
+        description="Notice physical sensations in your body to shift attention away from distressing thoughts."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="Cognitive Techniques"
+    bgColor="bg-blue-50 dark:bg-gray-800"
+    subtitle="Ways to change your relationship with thoughts:"
+  >
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <Card
+        title="Thought Defusion"
+        icon="🎭"
+        variant="highlighted"
+        description="Say the thought in a silly voice or imagine it on a movie screen to reduce its emotional impact."
+      />
+      <Card
+        title="The 5-4-3-2-1 Technique"
+        icon="🔢"
+        variant="highlighted"
+        description="Ground yourself by naming 5 things you see, 4 you hear, 3 you touch, 2 you smell, 1 you taste."
+      />
+      <Card
+        title="Acceptance"
+        icon="🤝"
+        variant="highlighted"
+        description="Accept that the thought is there without fighting it. Resistance often makes thoughts stronger."
+      />
+      <Card
+        title="Reframe the Meaning"
+        icon="🖼️"
+        variant="highlighted"
+        description="Remember that having a thought doesn't mean anything about your character or intentions."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="Lifestyle Strategies"
+    subtitle="Supporting your mental health through daily habits:"
+  >
+    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <Card
+        title="Regular Exercise"
+        icon="🏃‍♀️"
+        description="Physical activity reduces stress and improves mood, helping manage intrusive thoughts."
+      />
+      <Card
+        title="Adequate Sleep"
+        icon="😴"
+        description="7-9 hours of quality sleep supports emotional regulation and mental clarity."
+      />
+      <Card
+        title="Stress Management"
+        icon="🧘"
+        description="Practice relaxation techniques, yoga, or meditation to reduce overall stress levels."
+      />
+      <Card
+        title="Limit Triggers"
+        icon="🚫"
+        description="Identify and minimize exposure to content or situations that trigger intrusive thoughts."
+      />
+      <Card
+        title="Social Support"
+        icon="👥"
+        description="Connect with understanding friends, family, or support groups."
+      />
+      <Card
+        title="Professional Help"
+        icon="🩺"
+        description="Consider therapy, especially CBT or ACT, which are effective for intrusive thoughts."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="Emergency Techniques"
+    bgColor="bg-red-50 dark:bg-red-900/10"
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto">
+      <Card
+        title="When Thoughts Feel Overwhelming"
+        icon="🆘"
+        variant="minimal"
+        class="text-center border-red-200 dark:border-red-800"
+      >
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p class="font-semibold">
+            If you're having thoughts of self-harm or suicide, please reach out for help immediately:
+          </p>
+          <div class="text-sm space-y-2">
+            <p>• National Suicide Prevention Lifeline: 988</p>
+            <p>• Crisis Text Line: Text HOME to 741741</p>
+            <p>• Emergency Services: 911</p>
+          </div>
+          <p>
+            Remember: You are not your thoughts, and you deserve support.
+          </p>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <Section
+    title="Keep Learning"
+    centerContent={true}
+  >
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+        Managing intrusive thoughts is a skill that improves with practice. Be patient and compassionate with yourself.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <Button href="/myths" variant="primary" size="lg">
+          Debunk Common Myths
+        </Button>
+        <Button href="/resources" variant="secondary" size="lg">
+          Find Resources
+        </Button>
+      </div>
+    </div>
+  </Section>
+
+  <Footer slot="footer" />
+</MainLayout>

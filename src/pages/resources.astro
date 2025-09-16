@@ -1,0 +1,212 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+import Button from "../components/Button.astro";
+---
+
+<MainLayout title="Resources & Support - Quiet the Mind">
+  <Header slot="header" />
+
+  <Hero
+    title="Resources & Support 📚"
+    subtitle="Professional help, books, apps, and communities to support your mental health journey."
+  />
+
+  <Section
+    title="Professional Help"
+    subtitle="When to seek professional support and what to expect:"
+  >
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <Card
+        title="When to Seek Help"
+        icon="🆘"
+        description="If intrusive thoughts are affecting your daily life, relationships, or causing significant distress."
+      />
+      <Card
+        title="Types of Therapy"
+        icon="💬"
+        description="CBT, ACT, and ERP therapy are particularly effective for intrusive thoughts and OCD."
+      />
+      <Card
+        title="Finding a Therapist"
+        icon="🔍"
+        description="Look for therapists who specialize in anxiety, OCD, or intrusive thoughts. Many offer telehealth options."
+      />
+      <Card
+        title="What to Expect"
+        icon="📋"
+        description="Therapy provides tools, coping strategies, and a safe space to process your experiences."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="Crisis Resources"
+    bgColor="bg-red-50 dark:bg-red-900/10"
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto">
+      <Card
+        title="Immediate Help"
+        icon="📞"
+        variant="minimal"
+        class="text-center border-red-200 dark:border-red-800"
+      >
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p class="font-semibold text-red-600 dark:text-red-400">
+            If you're in crisis or having thoughts of self-harm:
+          </p>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p class="font-semibold">United States:</p>
+              <p>• Suicide & Crisis Lifeline: 988</p>
+              <p>• Crisis Text Line: Text HOME to 741741</p>
+              <p>• Emergency: 911</p>
+            </div>
+            <div>
+              <p class="font-semibold">International:</p>
+              <p>• Befrienders Worldwide: befrienders.org</p>
+              <p>• International Association for Suicide Prevention: iasp.info</p>
+            </div>
+          </div>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <Section
+    title="Books & Educational Resources"
+    subtitle="Recommended reading for understanding and managing intrusive thoughts:"
+  >
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <Card
+        title="'The Imp of the Mind'"
+        icon="📖"
+        description="By Lee Baer - A comprehensive guide to understanding unwanted thoughts."
+      />
+      <Card
+        title="'Mind Over Mood'"
+        icon="📘"
+        description="By Dennis Greenberger - Practical CBT techniques for managing thoughts and emotions."
+      />
+      <Card
+        title="'Get Out of Your Mind'"
+        icon="📗"
+        description="By Steven Hayes - Introduction to Acceptance and Commitment Therapy (ACT)."
+      />
+      <Card
+        title="'The Anxiety and Worry Workbook'"
+        icon="📝"
+        description="By David Clark - Practical exercises for managing anxiety and intrusive thoughts."
+      />
+      <Card
+        title="'Overcoming Unwanted Intrusive Thoughts'"
+        icon="📔"
+        description="By Sally Winston - Evidence-based strategies for dealing with intrusive thoughts."
+      />
+      <Card
+        title="'The Happiness Trap'"
+        icon="📙"
+        description="By Russ Harris - ACT-based approach to psychological flexibility and wellbeing."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="Apps & Digital Tools"
+    bgColor="bg-blue-50 dark:bg-gray-800"
+    subtitle="Helpful apps for meditation, anxiety management, and mental health:"
+  >
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <Card
+        title="Headspace"
+        icon="📱"
+        variant="highlighted"
+        description="Guided meditation and mindfulness exercises."
+      />
+      <Card
+        title="Calm"
+        icon="🧘"
+        variant="highlighted"
+        description="Sleep stories, meditation, and relaxation techniques."
+      />
+      <Card
+        title="Sanvello"
+        icon="💭"
+        variant="highlighted"
+        description="CBT-based tools for anxiety and mood tracking."
+      />
+      <Card
+        title="MindShift"
+        icon="🔄"
+        variant="highlighted"
+        description="Free app for anxiety management using CBT principles."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="Online Communities & Support"
+    subtitle="Connect with others who understand your experience:"
+  >
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <Card
+        title="Support Groups"
+        icon="👥"
+        description="Look for local or online support groups for anxiety, OCD, or intrusive thoughts."
+      />
+      <Card
+        title="Mental Health Forums"
+        icon="💬"
+        description="Moderated online communities where you can share experiences safely."
+      />
+      <Card
+        title="Professional Organizations"
+        icon="🏢"
+        description="IOCDF (International OCD Foundation) offers resources and support group listings."
+      />
+      <Card
+        title="Educational Websites"
+        icon="🌐"
+        description="NAMI, Mental Health America, and Anxiety and Depression Association provide reliable information."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="Remember"
+    centerContent={true}
+  >
+    <div class="max-w-3xl mx-auto">
+      <Card
+        title="You're Not Alone"
+        icon="🤝"
+        variant="minimal"
+        class="text-center"
+      >
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>
+            Millions of people experience intrusive thoughts. Seeking help is a sign of strength, not weakness.
+          </p>
+          <p>
+            Recovery is possible, and many people go on to live fulfilling lives after learning to manage intrusive thoughts effectively.
+          </p>
+        </div>
+        <div class="mt-6 flex flex-col sm:flex-row justify-center gap-4">
+          <Button href="/" variant="primary">
+            Back to Home
+          </Button>
+          <Button href="/strategies" variant="secondary">
+            Coping Strategies
+          </Button>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <Footer slot="footer" />
+</MainLayout>

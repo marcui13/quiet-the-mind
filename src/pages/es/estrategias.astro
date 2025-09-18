@@ -1,0 +1,127 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import Section from '../../components/Section.astro';
+import Card from '../../components/Card.astro';
+import Button from '../../components/Button.astro';
+---
+
+<MainLayout title="Estrategias - Quiet the Mind">
+  <Header slot="header" />
+
+  <Hero
+    title="Estrategias de Manejo 🛠️"
+    subtitle="Herramientas prácticas para una relación más saludable con tus pensamientos"
+  />
+
+  <Section
+    title="Técnicas principales 🎯"
+    subtitle="Estrategias efectivas basadas en evidencia:"
+  >
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <Card
+        title="Observación sin juicio"
+        icon="👁️"
+        description="Nota el pensamiento sin juzgarlo como bueno o malo. Simplemente observa que está ahí."
+      />
+      <Card
+        title="Técnica de la nube"
+        icon="☁️"
+        description="Imagina el pensamiento como una nube que pasa por el cielo de tu mente. Déjala pasar."
+      />
+      <Card
+        title="Etiquetado"
+        icon="🏷️"
+        description="Di mentalmente: 'Estoy teniendo el pensamiento de que...' para crear distancia."
+      />
+      <Card
+        title="Respiración consciente"
+        icon="🫁"
+        description="Enfócate en tu respiración cuando aparezca un pensamiento perturbador."
+      />
+      <Card
+        title="Aceptación radical"
+        icon="🤝"
+        description="Acepta que los pensamientos están ahí sin tratar de eliminarlos o luchar contra ellos."
+      />
+      <Card
+        title="Refocus en valores"
+        icon="🧭"
+        description="Redirige tu atención hacia lo que realmente es importante para ti."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="Qué NO hacer ❌"
+    bgColor="bg-red-50 dark:bg-red-900/10"
+    centerContent={true}
+  >
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8">
+        <Card
+          title="No trates de suprimir"
+          icon="🚫"
+          variant="default"
+          description="Intentar no pensar en algo paradójicamente hace que pienses más en ello."
+        />
+        <Card
+          title="No analices en exceso"
+          icon="🔍"
+          variant="default"
+          description="Darle vueltas al pensamiento para 'entender por qué apareció' puede empeorarlo."
+        />
+        <Card
+          title="No te juzgues"
+          icon="⚖️"
+          variant="default"
+          description="Criticarte por tener estos pensamientos solo aumenta el malestar emocional."
+        />
+        <Card
+          title="No evites situaciones"
+          icon="🏃‍♂️"
+          variant="default"
+          description="Evitar lugares o actividades puede reforzar el ciclo de los pensamientos intrusivos."
+        />
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="Práctica gradual 🌱"
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto">
+      <Card
+        title="Desarrollo paso a paso"
+        icon="📈"
+        variant="minimal"
+        class="text-center"
+      >
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>
+            <strong>Semana 1-2:</strong> Practica simplemente notar cuando aparece un pensamiento intrusive, sin juzgarlo.
+          </p>
+          <p>
+            <strong>Semana 3-4:</strong> Experimenta con la técnica de etiquetado: "Estoy teniendo el pensamiento de..."
+          </p>
+          <p>
+            <strong>Semana 5+:</strong> Incorpora la respiración consciente y la aceptación cuando notes los pensamientos.
+          </p>
+        </div>
+        <div class="mt-6 flex flex-col sm:flex-row justify-center gap-4">
+          <Button href="/es/mitos" variant="primary">
+            Desmitifica creencias
+          </Button>
+          <Button href="/es/resources" variant="secondary">
+            Busca ayuda profesional
+          </Button>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <Footer slot="footer" />
+</MainLayout>

@@ -1,0 +1,114 @@
+---
+import MainLayout from "../../../layouts/MainLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import Hero from "../../../components/Hero.astro";
+import Section from "../../../components/Section.astro";
+import Card from "../../../components/Card.astro";
+import Button from "../../../components/Button.astro";
+---
+
+<MainLayout title="Causes of Intrusive Thoughts - Quiet the Mind">
+  <Header slot="header" />
+
+  <Hero
+    title="Why Do Intrusive Thoughts Happen? 🤔"
+    subtitle="Understanding the causes can help reduce the fear and confusion around intrusive thoughts."
+  />
+
+  <Section
+    title="Common Causes and Triggers"
+    subtitle="Intrusive thoughts can arise from various factors, often working together:"
+  >
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <Card
+        title="Stress and Anxiety"
+        icon="😰"
+        description="High levels of stress or anxiety can make intrusive thoughts more frequent and intense."
+      />
+      <Card
+        title="Sleep Deprivation"
+        icon="😴"
+        description="Lack of sleep affects mental clarity and emotional regulation, increasing intrusive thoughts."
+      />
+      <Card
+        title="Hormonal Changes"
+        icon="🔄"
+        description="Pregnancy, menstruation, or other hormonal shifts can trigger or worsen intrusive thoughts."
+      />
+      <Card
+        title="Mental Health Conditions"
+        icon="🧠"
+        description="OCD, anxiety disorders, depression, and PTSD can all involve intrusive thoughts as symptoms."
+      />
+      <Card
+        title="Major Life Changes"
+        icon="🌪️"
+        description="Big transitions like moving, job changes, or relationship changes can trigger intrusive thoughts."
+      />
+      <Card
+        title="Perfectionism"
+        icon="⭐"
+        description="High standards and perfectionist tendencies can make you more prone to intrusive thoughts."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="The Brain Science"
+    bgColor="bg-blue-50 dark:bg-gray-800"
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto space-y-8">
+      <Card
+        title="Your Brain is Doing Its Job"
+        icon="🧠"
+        variant="highlighted"
+        class="text-center"
+      >
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>
+            Intrusive thoughts are actually a normal function of the brain. Everyone's mind generates random thoughts throughout the day - most people just dismiss them without distress.
+          </p>
+          <p>
+            The difference is that some people become stuck on certain thoughts, giving them more attention and meaning than they deserve.
+          </p>
+        </div>
+      </Card>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <Card
+          title="The Thought-Action Fusion"
+          icon="🔗"
+          description="Some people mistakenly believe that having a thought makes them more likely to act on it, which isn't true."
+        />
+        <Card
+          title="Thought Suppression Paradox"
+          icon="🚫"
+          description="The more you try to suppress a thought, the more likely it is to return - like trying not to think of a white elephant."
+        />
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="Moving Forward"
+    centerContent={true}
+  >
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+        Understanding the causes helps reduce self-blame and shame. Remember, intrusive thoughts are symptoms, not character flaws.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <Button href="/topics/intrusive-thoughts/strategies" variant="primary" size="lg">
+          Learn Coping Strategies
+        </Button>
+        <Button href="/topics/intrusive-thoughts/myths" variant="secondary" size="lg">
+          Common Myths
+        </Button>
+      </div>
+    </div>
+  </Section>
+
+  <Footer slot="footer" />
+</MainLayout>

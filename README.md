@@ -1,17 +1,18 @@
 # Quiet the Mind 🧘‍♂️
 
-Una plataforma web educativa para ayudar a las personas a comprender y gestionar los pensamientos intrusivos de manera saludable.
+Una plataforma integral de bienestar mental y emocional que ofrece recursos, información y herramientas para diversos aspectos de la salud mental.
 
 ## 📖 Descripción
 
-**Quiet the Mind** es un sitio web informativo diseñado para proporcionar recursos, estrategias y apoyo a personas que experimentan pensamientos intrusivos. El objetivo es desmitificar este fenómeno común y ofrecer herramientas prácticas para una mejor gestión emocional.
+**Quiet the Mind** es un hub de bienestar mental diseñado para proporcionar contenido educativo, recursos prácticos y apoyo a personas que buscan mejorar su salud mental y emocional. La plataforma aborda múltiples temas de bienestar mental con un enfoque holístico y basado en evidencia.
 
 ### 🎯 Propósito
 
-- **Educar** sobre la naturaleza normal de los pensamientos intrusivos
-- **Desmitificar** creencias erróneas y reducir el estigma
-- **Proveer** estrategias prácticas de manejo saludable
+- **Educar** sobre diversos aspectos del bienestar mental y emocional
+- **Empoderar** a las personas con herramientas prácticas y estrategias efectivas
+- **Desmitificar** temas de salud mental y reducir el estigma
 - **Conectar** a usuarios con recursos profesionales cuando sea necesario
+- **Fomentar** un enfoque holístico del bienestar personal
 
 ## ✨ Características
 
@@ -26,13 +27,30 @@ Una plataforma web educativa para ayudar a las personas a comprender y gestionar
 
 ### Páginas Principales
 
-1. **Inicio** (`/`) - Introducción y bienvenida
-2. **Tipos** (`/tipos`) - Diferentes tipos de pensamientos intrusivos
-3. **Causas** (`/causas`) - Por qué aparecen estos pensamientos
-4. **Estrategias** (`/estrategias`) - Técnicas de manejo saludable
-5. **Mitos** (`/mitos`) - Desmitificación de creencias erróneas
-6. **Recursos** (`/recursos`) - Libros, profesionales y ayuda adicional
-7. **Cierre** (`/cierre`) - Mensaje inspirador final
+1. **Inicio** (`/`) - Hub principal de bienestar mental y emocional
+2. **Tópicos** (`/topics`) - Exploración de temas de bienestar mental
+3. **Recursos** (`/recursos`) - Libros, profesionales y ayuda adicional
+
+### Tópicos Disponibles
+
+#### 🌪️ **Pensamientos Intrusivos** (`/types`)
+- Tipos y patrones de pensamientos intrusivos
+- Causas y factores desencadenantes
+- Estrategias de manejo saludable
+- Desmitificación de creencias erróneas
+
+#### ✨ **Autoestima** (`/topics/self-esteem`)
+- Conexión entre autoestima y calidad de vida
+- Desarrollar la autoestima en otros
+- Habilidades de aceptación y apreciación
+- Técnicas de escucha activa
+
+### Estructura Escalable
+
+La plataforma está diseñada para expandirse fácilmente con nuevos tópicos:
+- **Próximamente**: Mindfulness y Meditación, Manejo de Ansiedad, Inteligencia Emocional
+- Cada tópico mantiene una estructura consistente y navegación intuitiva
+- Sistema de URLs organizadas: `/topics/<nombre-del-topico>`
 
 ## 🛠️ Tecnologías
 
@@ -110,17 +128,27 @@ quiet-the-mind/
 │   │   ├── Button.astro
 │   │   ├── Card.astro
 │   │   ├── Hero.astro
+│   │   ├── Header.astro
+│   │   ├── Footer.astro
 │   │   └── Section.astro
 │   ├── layouts/            # Layouts base
-│   │   └── Layout.astro
+│   │   ├── Layout.astro
+│   │   └── MainLayout.astro
 │   ├── pages/              # Páginas del sitio
-│   │   ├── index.astro     # Página de inicio
-│   │   ├── tipos.astro
-│   │   ├── causas.astro
-│   │   ├── estrategias.astro
-│   │   ├── mitos.astro
-│   │   ├── recursos.astro
-│   │   └── cierre.astro
+│   │   ├── index.astro     # Hub principal
+│   │   ├── topics/         # Tópicos de bienestar mental
+│   │   │   ├── index.astro # Página de tópicos
+│   │   │   └── self-esteem/
+│   │   │       └── index.astro
+│   │   ├── es/             # Versión en español
+│   │   │   └── topics/
+│   │   ├── types.astro     # Pensamientos intrusivos
+│   │   ├── strategies.astro
+│   │   ├── myths.astro
+│   │   └── resources.astro
+│   ├── i18n/               # Internacionalización
+│   │   ├── ui.ts           # Traducciones
+│   │   └── utils.ts
 │   └── styles/             # Estilos globales
 │       └── global.css
 ├── tailwind.config.js      # Configuración de Tailwind
@@ -193,9 +221,10 @@ Este proyecto está licenciado bajo la Licencia MIT. Ver el archivo `LICENSE` pa
 
 ## 💖 Reconocimientos
 
-- Diseñado con sensibilidad hacia las personas que experimentan pensamientos intrusivos
-- Contenido desarrollado con enfoque en bienestar mental
-- Inspirado en principios de psicología clínica y mindfulness
+- Diseñado con sensibilidad hacia las personas que buscan mejorar su bienestar mental
+- Contenido desarrollado con enfoque holístico en salud mental y emocional
+- Inspirado en principios de psicología clínica, mindfulness y desarrollo personal
+- Estructura escalable para abordar diversos aspectos del bienestar mental
 
 ## 📞 Contacto
 
@@ -205,6 +234,6 @@ Para preguntas o sugerencias sobre el proyecto:
 
 ---
 
-**Nota importante**: Este sitio web es solo informativo y no sustituye la consulta con profesionales de la salud mental. Si experimentas dificultades significativas, busca ayuda profesional.
+**Nota importante**: Este sitio web es solo informativo y educativo, no sustituye la consulta con profesionales de la salud mental. Si experimentas dificultades significativas con tu bienestar mental o emocional, busca ayuda profesional.
 
-*Construido con ❤️ para el bienestar mental*
+*Construido con ❤️ para el bienestar mental y emocional*

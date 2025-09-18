@@ -1,0 +1,144 @@
+---
+import MainLayout from '../../../../layouts/MainLayout.astro';
+import Header from '../../../../components/Header.astro';
+import Footer from '../../../../components/Footer.astro';
+import Hero from '../../../../components/Hero.astro';
+import Section from '../../../../components/Section.astro';
+import Card from '../../../../components/Card.astro';
+import Button from '../../../../components/Button.astro';
+---
+
+<MainLayout title="Mitos y Realidades - Quiet the Mind">
+  <Header slot="header" />
+
+  <Hero
+    title="Mitos y Realidades"
+    subtitle="Desmitifica las creencias más comunes sobre los pensamientos intrusivos 💡"
+  />
+
+  <Section
+    title="Mito vs Realidad 🎭"
+    centerContent={true}
+  >
+    <div class="space-y-12 max-w-6xl mx-auto">
+
+      <!-- Mito 1 -->
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <Card
+          title="❌ MITO"
+          icon="🚫"
+          variant="default"
+        >
+          <p class="text-gray-700 dark:text-gray-300 font-medium">
+            "Si pienso algo malo, significa que lo deseo"
+          </p>
+        </Card>
+        <Card
+          title="✅ REALIDAD"
+          icon="✨"
+          variant="highlighted"
+        >
+          <p class="text-gray-700 dark:text-gray-300">
+            Los pensamientos intrusivos son justamente lo opuesto a lo que deseamos. Aparecen porque van en contra de nuestros valores.
+          </p>
+        </Card>
+      </div>
+
+      <!-- Mito 2 -->
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <Card
+          title="❌ MITO"
+          icon="🚫"
+          variant="default"
+        >
+          <p class="text-gray-700 dark:text-gray-300 font-medium">
+            "Solo las personas con problemas mentales los tienen"
+          </p>
+        </Card>
+        <Card
+          title="✅ REALIDAD"
+          icon="✨"
+          variant="highlighted"
+        >
+          <p class="text-gray-700 dark:text-gray-300">
+            Entre el 80-90% de las personas experimentan pensamientos intrusivos. Es parte del funcionamiento normal del cerebro.
+          </p>
+        </Card>
+      </div>
+
+      <!-- Mito 3 -->
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <Card
+          title="❌ MITO"
+          icon="🚫"
+          variant="default"
+        >
+          <p class="text-gray-700 dark:text-gray-300 font-medium">
+            "Debería poder controlar todos mis pensamientos"
+          </p>
+        </Card>
+        <Card
+          title="✅ REALIDAD"
+          icon="✨"
+          variant="highlighted"
+        >
+          <p class="text-gray-700 dark:text-gray-300">
+            Es imposible controlar todos nuestros pensamientos. Podemos elegir cómo responder a ellos, pero no evitar que aparezcan.
+          </p>
+        </Card>
+      </div>
+
+      <!-- Mito 4 -->
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <Card
+          title="❌ MITO"
+          icon="🚫"
+          variant="default"
+        >
+          <p class="text-gray-700 dark:text-gray-300 font-medium">
+            "Si los ignoro, desaparecerán"
+          </p>
+        </Card>
+        <Card
+          title="✅ REALIDAD"
+          icon="✨"
+          variant="highlighted"
+        >
+          <p class="text-gray-700 dark:text-gray-300">
+            Intentar suprimir pensamientos puede hacerlos más persistentes. Es mejor reconocerlos sin juzgar y dejarlos pasar.
+          </p>
+        </Card>
+      </div>
+
+    </div>
+  </Section>
+
+  <Section
+    title="La clave está en cambiar la relación 🔑"
+    bgColor="bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10"
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto">
+      <Card
+        title="Cambia tu relación con los pensamientos"
+        icon="🌱"
+        variant="minimal"
+        class="text-center"
+      >
+        <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+          En lugar de luchar contra los pensamientos intrusivos, aprendé a cambiar tu relación con ellos. No son verdades, no te definen, y no necesitás responder a cada uno.
+        </p>
+        <div class="flex justify-center space-x-4">
+          <Button href="/es/topics/intrusive-thoughts/strategies" variant="primary">
+            Aprende estrategias
+          </Button>
+          <Button href="/es/resources" variant="secondary">
+            Busca ayuda profesional
+          </Button>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <Footer slot="footer" />
+</MainLayout>

@@ -1,0 +1,122 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import Section from '../../components/Section.astro';
+import Card from '../../components/Card.astro';
+import Button from '../../components/Button.astro';
+---
+
+<MainLayout title="Tipos - Quiet the Mind">
+  <Header slot="header" />
+
+  <Hero
+    title="Tipos de Pensamientos Intrusivos 💭"
+    subtitle="Conoce los diferentes tipos para entender mejor tu experiencia"
+  />
+
+  <Section
+    title="Tipos más comunes 📋"
+    subtitle="Los pensamientos intrusivos pueden tomar muchas formas:"
+    centerContent={true}
+  >
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <Card
+          title="Pensamientos sobre hacer daño"
+          icon="⚠️"
+          description="Ideas sobre lastimar a otros o a uno mismo, sin intención real de hacerlo."
+        />
+        <Card
+          title="Dudas sobre moralidad"
+          icon="🤔"
+          description="Cuestionamientos sobre si eres una buena persona o si has hecho algo malo."
+        />
+        <Card
+          title="Imágenes perturbadoras"
+          icon="👁️"
+          description="Imágenes mentales violentas, sexuales o inapropiadas que aparecen sin control."
+        />
+        <Card
+          title="Pensamientos sobre contaminación"
+          icon="🦠"
+          description="Preocupaciones exageradas sobre gérmenes, suciedad o contaminación."
+        />
+        <Card
+          title="Impulsos no deseados"
+          icon="⚡"
+          description="Urgencias repentinas de hacer algo inapropiado o embarrassing."
+        />
+        <Card
+          title="Dudas sobre relaciones"
+          icon="💔"
+          description="Cuestionamientos sobre si realmente amas a tu pareja o familia."
+        />
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="Características comunes 🎯"
+    bgColor="bg-blue-50 dark:bg-gray-800"
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8">
+        <Card
+          title="Son indeseados"
+          icon="🚫"
+          variant="highlighted"
+          description="Aparecen sin que los busques y van contra tus valores personales."
+        />
+        <Card
+          title="Son repetitivos"
+          icon="🔄"
+          variant="highlighted"
+          description="Tienden a volver una y otra vez, especialmente si les prestas mucha atención."
+        />
+        <Card
+          title="Causan ansiedad"
+          icon="😰"
+          variant="highlighted"
+          description="Generan malestar emocional precisamente porque van contra lo que realmente quieres."
+        />
+        <Card
+          title="Son automáticos"
+          icon="🤖"
+          variant="highlighted"
+          description="Aparecen sin control consciente, como cualquier otro pensamiento automático."
+        />
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="Lo importante de recordar 🌟"
+    centerContent={true}
+  >
+    <div class="max-w-3xl mx-auto">
+      <Card
+        title="No reflejan quién eres"
+        icon="✨"
+        variant="minimal"
+        class="text-center"
+      >
+        <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+          Independientemente del tipo de pensamiento intrusive que experimentes, es importante recordar que estos pensamientos no definen quién eres ni reflejan tus verdaderos deseos o intenciones.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <Button href="/es/causas" variant="primary">
+            ¿Por qué aparecen?
+          </Button>
+          <Button href="/es/strategies" variant="secondary">
+            Cómo manejarlos
+          </Button>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <Footer slot="footer" />
+</MainLayout>

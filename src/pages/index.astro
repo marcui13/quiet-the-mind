@@ -20,7 +20,7 @@ const t = useTranslations(lang);
     title={t("home.hero.title")}
     subtitle={t("home.hero.subtitle")}
     ctaText={t("home.hero.cta")}
-    ctaLink="#introduction"
+    ctaLink="#topics"
   />
 
   <!-- Introduction Section -->
@@ -34,19 +34,105 @@ const t = useTranslations(lang);
       <div class="grid md:grid-cols-3 gap-6">
         <Card
           title={t("home.introduction.card1.title")}
-          icon="🌪️"
+          icon="📚"
           description={t("home.introduction.card1.description")}
         />
         <Card
           title={t("home.introduction.card2.title")}
-          icon="🌱"
+          icon="🛠️"
           description={t("home.introduction.card2.description")}
         />
         <Card
           title={t("home.introduction.card3.title")}
-          icon="✨"
+          icon="🌿"
           description={t("home.introduction.card3.description")}
         />
+      </div>
+    </div>
+  </Section>
+
+  <!-- Topics Showcase Section -->
+  <Section
+    id="topics"
+    title={t("home.topics.title")}
+    subtitle={t("home.topics.subtitle")}
+    bgColor="bg-gray-50 dark:bg-gray-800"
+    centerContent={true}
+  >
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Intrusive Thoughts Topic -->
+        <Card
+          title={t("home.topics.intrusive_thoughts.title")}
+          icon="🌪️"
+          variant="highlighted"
+          class="hover-lift group"
+        >
+          <div class="space-y-4">
+            <p class="text-gray-600 dark:text-gray-300">
+              {t("home.topics.intrusive_thoughts.description")}
+            </p>
+            <div class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+              <div class="flex items-center space-x-2">
+                <span>📋</span>
+                <span>Types & Patterns</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span>🔍</span>
+                <span>Causes & Triggers</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span>🛠️</span>
+                <span>Coping Strategies</span>
+              </div>
+            </div>
+            <div class="pt-4">
+              <Button href="/topics/intrusive-thoughts" variant="primary" class="w-full group-hover:scale-105 transition-transform">
+                {t("button.explore_topic")}
+              </Button>
+            </div>
+          </div>
+        </Card>
+
+        <!-- Self-Esteem Topic -->
+        <Card
+          title={t("home.topics.self_esteem.title")}
+          icon="✨"
+          variant="highlighted"
+          class="hover-lift group"
+        >
+          <div class="space-y-4">
+            <p class="text-gray-600 dark:text-gray-300">
+              {t("home.topics.self_esteem.description")}
+            </p>
+            <div class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+              <div class="flex items-center space-x-2">
+                <span>🤝</span>
+                <span>Healthy Relationships</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span>🫶</span>
+                <span>Self-Acceptance</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span>🙏</span>
+                <span>Building Confidence</span>
+              </div>
+            </div>
+            <div class="pt-4">
+              <Button href="/topics/self-esteem" variant="primary" class="w-full group-hover:scale-105 transition-transform">
+                {t("button.explore_topic")}
+              </Button>
+            </div>
+          </div>
+        </Card>
+      </div>
+
+      <!-- View All Topics Button -->
+      <div class="text-center mt-8">
+        <Button href="/topics" variant="secondary" size="lg">
+          View All Topics →
+        </Button>
       </div>
     </div>
   </Section>
@@ -65,19 +151,19 @@ const t = useTranslations(lang);
       <div class="grid md:grid-cols-3 gap-6">
         <Card
           title={t("home.objective.card1.title")}
-          icon="📚"
+          icon="🌐"
           variant="highlighted"
           description={t("home.objective.card1.description")}
         />
         <Card
           title={t("home.objective.card2.title")}
-          icon="🛠️"
+          icon="⚡"
           variant="highlighted"
           description={t("home.objective.card2.description")}
         />
         <Card
           title={t("home.objective.card3.title")}
-          icon="💡"
+          icon="🤝"
           variant="highlighted"
           description={t("home.objective.card3.description")}
         />
@@ -85,10 +171,10 @@ const t = useTranslations(lang);
 
       <div class="pt-8 flex flex-col sm:flex-row justify-center gap-4">
         <Button href="/topics" variant="primary" size="lg">
-          Explore All Topics
-        </Button>
-        <Button href="/types" variant="secondary" size="lg">
           {t("home.objective.cta")}
+        </Button>
+        <Button href="/resources" variant="secondary" size="lg">
+          Professional Resources
         </Button>
       </div>
     </div>
@@ -111,7 +197,7 @@ const t = useTranslations(lang);
           {t("home.remember.card.description")}
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <Button href="/strategies" variant="secondary">
+          <Button href="/topics" variant="secondary">
             {t("home.remember.cta1")}
           </Button>
           <Button href="/resources" variant="outline">

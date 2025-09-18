@@ -1,0 +1,172 @@
+---
+import MainLayout from "../../../../layouts/MainLayout.astro";
+import Header from "../../../../components/Header.astro";
+import Footer from "../../../../components/Footer.astro";
+import Hero from "../../../../components/Hero.astro";
+import Section from "../../../../components/Section.astro";
+import Card from "../../../../components/Card.astro";
+import Button from "../../../../components/Button.astro";
+import { getLangFromUrl, useTranslations } from "../../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<MainLayout title="Pensamientos Intrusivos - Quiet the Mind">
+  <Header slot="header" />
+
+  <Hero
+    title="Pensamientos Intrusivos 💭"
+    subtitle="Entender los diferentes tipos de pensamientos intrusivos puede ayudar a normalizar tu experiencia y reducir la ansiedad sobre tenerlos."
+  />
+
+  <Section
+    title="¿Qué son los Pensamientos Intrusivos?"
+    subtitle="Los pensamientos intrusivos son pensamientos, imágenes o impulsos no deseados e involuntarios que pueden ser perturbadores o angustiantes."
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-6">
+        <Card
+          title="No Deseados"
+          icon="🚫"
+          description="Aparecen sin tu consentimiento y a menudo van contra tus valores y creencias."
+        />
+        <Card
+          title="Normales"
+          icon="✅"
+          description="Las investigaciones muestran que el 94% de las personas experimenta pensamientos intrusivos. No estás solo."
+        />
+        <Card
+          title="No Predictivos"
+          icon="🔮"
+          description="Tener estos pensamientos no significa que actuarás sobre ellos o que reflejan tus verdaderos deseos."
+        />
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="Tipos Comunes"
+    subtitle="Los pensamientos intrusivos típicamente caen en varias categorías comunes:"
+    bgColor="bg-gray-50 dark:bg-gray-800"
+  >
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <Card
+        title="Pensamientos sobre hacer daño"
+        icon="⚠️"
+        description="Pensamientos sobre lastimar accidental o intencionalmente a ti mismo o a otros, a pesar de no tener deseo de hacerlo."
+      />
+      <Card
+        title="Pensamientos sexuales"
+        icon="🚫"
+        description="Pensamientos o imágenes sexuales no deseadas que se sienten inapropiadas o perturbadoras para ti."
+      />
+      <Card
+        title="Pensamientos religiosos/morales"
+        icon="🙏"
+        description="Pensamientos que van contra tus creencias religiosas o valores morales, causando angustia."
+      />
+      <Card
+        title="Pensamientos de contaminación"
+        icon="🧼"
+        description="Miedos sobre gérmenes, contaminación o enfermarse, a menudo llevando a limpieza excesiva."
+      />
+      <Card
+        title="Pensamientos de duda"
+        icon="❓"
+        description="Dudas persistentes sobre si has hecho algo correctamente o de manera segura."
+      />
+      <Card
+        title="Pensamientos perfeccionistas"
+        icon="🎯"
+        description="Pensamientos sobre cosas que necesitan estar 'perfectas' o correctas de alguna manera."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="Explora Más"
+    centerContent={true}
+  >
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <Card
+          title="¿Por qué Ocurren?"
+          icon="🤔"
+          variant="highlighted"
+          class="hover-lift"
+        >
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Entiende los factores psicológicos y neurológicos detrás de los pensamientos intrusivos.
+          </p>
+          <Button href="/es/topics/intrusive-thoughts/causes" variant="primary" class="w-full">
+            Conoce las Causas
+          </Button>
+        </Card>
+
+        <Card
+          title="Estrategias de Afrontamiento"
+          icon="🛠️"
+          variant="highlighted"
+          class="hover-lift"
+        >
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Técnicas basadas en evidencia para gestionar pensamientos intrusivos efectivamente.
+          </p>
+          <Button href="/es/topics/intrusive-thoughts/strategies" variant="primary" class="w-full">
+            Ver Estrategias
+          </Button>
+        </Card>
+
+        <Card
+          title="Mitos Comunes"
+          icon="💡"
+          variant="highlighted"
+          class="hover-lift"
+        >
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Desmiente conceptos erróneos y entiende la verdad sobre los pensamientos intrusivos.
+          </p>
+          <Button href="/es/topics/intrusive-thoughts/myths" variant="primary" class="w-full">
+            Desmitificar
+          </Button>
+        </Card>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="Recuerda"
+    bgColor="bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10"
+    centerContent={true}
+  >
+    <div class="max-w-3xl mx-auto">
+      <Card
+        title="No Eres Tus Pensamientos"
+        icon="💚"
+        variant="minimal"
+        class="text-center"
+      >
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>
+            Tener pensamientos intrusivos no significa que quieras actuar sobre ellos o que reflejen tus verdaderos deseos. A menudo son lo opuesto a lo que más valoras.
+          </p>
+          <p>
+            La angustia que sientes sobre estos pensamientos es en realidad una buena señal - muestra que van contra tus valores y carácter.
+          </p>
+        </div>
+        <div class="mt-6 flex flex-col sm:flex-row justify-center gap-4">
+          <Button href="/es/topics" variant="secondary">
+            Explorar Otros Tópicos
+          </Button>
+          <Button href="/es/resources" variant="outline">
+            Ayuda Profesional
+          </Button>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <Footer slot="footer" />
+</MainLayout>

@@ -1,0 +1,184 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import Section from '../../components/Section.astro';
+import Card from '../../components/Card.astro';
+import Button from '../../components/Button.astro';
+---
+
+<MainLayout title="Recursos - Quiet the Mind">
+  <Header slot="header" />
+
+  <Hero
+    title="Recursos 📚"
+    subtitle="Libros, profesionales y ayuda adicional para tu bienestar mental"
+  />
+
+  <Section
+    title="Ayuda Profesional"
+    subtitle="Cuándo buscar apoyo profesional y qué esperar:"
+  >
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <Card
+        title="Cuándo Buscar Ayuda"
+        icon="🆘"
+        description="Si los problemas de bienestar mental afectan tu vida diaria, relaciones o causan angustia significativa."
+      />
+      <Card
+        title="Tipos de Terapia"
+        icon="💬"
+        description="TCC, TAC y terapia de exposición son particularmente efectivas para ansiedad y pensamientos intrusivos."
+      />
+      <Card
+        title="Encontrar un Terapeuta"
+        icon="🔍"
+        description="Busca terapeutas especializados en ansiedad o bienestar mental. Muchos ofrecen opciones de telesalud."
+      />
+      <Card
+        title="Qué Esperar"
+        icon="📋"
+        description="La terapia proporciona herramientas, estrategias de afrontamiento y un espacio seguro para procesar experiencias."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="Recursos de Crisis"
+    bgColor="bg-red-50 dark:bg-red-900/10"
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto">
+      <Card
+        title="Ayuda Inmediata"
+        icon="📞"
+        variant="minimal"
+        class="text-center border-red-200 dark:border-red-800"
+      >
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p class="font-semibold text-red-600 dark:text-red-400">
+            Si estás en crisis o tienes pensamientos de autolesión:
+          </p>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p class="font-semibold">España:</p>
+              <p>• Teléfono de la Esperanza: 717 003 717</p>
+              <p>• Emergencias: 112</p>
+              <p>• Salud Mental España: saludmental.org</p>
+            </div>
+            <div>
+              <p class="font-semibold">Internacional:</p>
+              <p>• Befrienders Worldwide: befrienders.org</p>
+              <p>• Asociación Internacional de Prevención del Suicidio: iasp.info</p>
+            </div>
+          </div>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <Section
+    title="Libros Recomendados"
+    subtitle="Lecturas útiles sobre bienestar mental y pensamientos intrusivos:"
+  >
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <Card
+        title="'El Demonio de la Mente'"
+        icon="📖"
+        description="Por Lee Baer - Guía integral para entender pensamientos no deseados."
+      />
+      <Card
+        title="'Mente sobre Estado de Ánimo'"
+        icon="📘"
+        description="Por Dennis Greenberger - Técnicas prácticas de TCC para gestionar pensamientos y emociones."
+      />
+      <Card
+        title="'Sal de tu Mente'"
+        icon="📗"
+        description="Por Steven Hayes - Introducción a la Terapia de Aceptación y Compromiso (TAC)."
+      />
+      <Card
+        title="'Manual de Ansiedad'"
+        icon="📝"
+        description="Ejercicios prácticos para gestionar ansiedad y pensamientos intrusivos."
+      />
+      <Card
+        title="'Superando Pensamientos Intrusivos'"
+        icon="📔"
+        description="Por Sally Winston - Estrategias basadas en evidencia para lidiar con pensamientos intrusivos."
+      />
+      <Card
+        title="'La Trampa de la Felicidad'"
+        icon="📙"
+        description="Por Russ Harris - Enfoque basado en TAC para la flexibilidad psicológica y bienestar."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="Apps y Herramientas"
+    bgColor="bg-blue-50 dark:bg-gray-800"
+    subtitle="Aplicaciones útiles para meditación y gestión de ansiedad:"
+  >
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <Card
+        title="Headspace"
+        icon="📱"
+        variant="highlighted"
+        description="Meditación guiada y ejercicios de mindfulness."
+      />
+      <Card
+        title="Calm"
+        icon="🧘"
+        variant="highlighted"
+        description="Historias para dormir, meditación y técnicas de relajación."
+      />
+      <Card
+        title="Sanvello"
+        icon="💭"
+        variant="highlighted"
+        description="Herramientas basadas en TCC para ansiedad y seguimiento del estado de ánimo."
+      />
+      <Card
+        title="MindShift"
+        icon="🔄"
+        variant="highlighted"
+        description="App gratuita para gestión de ansiedad usando principios de TCC."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="Recuerda"
+    centerContent={true}
+  >
+    <div class="max-w-3xl mx-auto">
+      <Card
+        title="No Estás Solo"
+        icon="🤝"
+        variant="minimal"
+        class="text-center"
+      >
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>
+            Millones de personas experimentan desafíos de bienestar mental. Buscar ayuda es una señal de fortaleza, no de debilidad.
+          </p>
+          <p>
+            La recuperación es posible, y muchas personas continúan viviendo vidas plenas después de aprender a gestionar su bienestar mental efectivamente.
+          </p>
+        </div>
+        <div class="mt-6 flex flex-col sm:flex-row justify-center gap-4">
+          <Button href="/es" variant="primary">
+            Volver al Inicio
+          </Button>
+          <Button href="/es/strategies" variant="secondary">
+            Estrategias de Afrontamiento
+          </Button>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <Footer slot="footer" />
+</MainLayout>

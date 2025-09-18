@@ -1,0 +1,172 @@
+---
+import MainLayout from "../../../layouts/MainLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import Hero from "../../../components/Hero.astro";
+import Section from "../../../components/Section.astro";
+import Card from "../../../components/Card.astro";
+import Button from "../../../components/Button.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<MainLayout title="Intrusive Thoughts - Quiet the Mind">
+  <Header slot="header" />
+
+  <Hero
+    title="Intrusive Thoughts 💭"
+    subtitle="Understanding the different categories of intrusive thoughts can help normalize your experience and reduce anxiety about having them."
+  />
+
+  <Section
+    title="What Are Intrusive Thoughts?"
+    subtitle="Intrusive thoughts are unwanted, involuntary thoughts, images, or urges that can be disturbing or distressing."
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-6">
+        <Card
+          title="Unwanted"
+          icon="🚫"
+          description="They appear without your consent and often go against your values and beliefs."
+        />
+        <Card
+          title="Normal"
+          icon="✅"
+          description="Research shows that 94% of people experience intrusive thoughts. You're not alone."
+        />
+        <Card
+          title="Not Predictive"
+          icon="🔮"
+          description="Having these thoughts doesn't mean you'll act on them or that they reflect your true desires."
+        />
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="Common Types"
+    subtitle="Intrusive thoughts typically fall into several common categories:"
+    bgColor="bg-gray-50 dark:bg-gray-800"
+  >
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <Card
+        title="Harm-related thoughts"
+        icon="⚠️"
+        description="Thoughts about accidentally or intentionally harming yourself or others, despite having no desire to do so."
+      />
+      <Card
+        title="Sexual thoughts"
+        icon="🚫"
+        description="Unwanted sexual thoughts or images that feel inappropriate or disturbing to you."
+      />
+      <Card
+        title="Religious/moral thoughts"
+        icon="🙏"
+        description="Thoughts that go against your religious beliefs or moral values, causing distress."
+      />
+      <Card
+        title="Contamination thoughts"
+        icon="🧼"
+        description="Fears about germs, contamination, or getting sick, often leading to excessive cleaning."
+      />
+      <Card
+        title="Doubting thoughts"
+        icon="❓"
+        description="Persistent doubts about whether you've done something correctly or safely."
+      />
+      <Card
+        title="Perfectionist thoughts"
+        icon="🎯"
+        description="Thoughts about things needing to be 'just right' or perfect in some way."
+      />
+    </div>
+  </Section>
+
+  <Section
+    title="Explore More"
+    centerContent={true}
+  >
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <Card
+          title="Why Do They Occur?"
+          icon="🤔"
+          variant="highlighted"
+          class="hover-lift"
+        >
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Understand the psychological and neurological factors behind intrusive thoughts.
+          </p>
+          <Button href="/topics/intrusive-thoughts/causes" variant="primary" class="w-full">
+            Learn About Causes
+          </Button>
+        </Card>
+
+        <Card
+          title="Coping Strategies"
+          icon="🛠️"
+          variant="highlighted"
+          class="hover-lift"
+        >
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Evidence-based techniques for managing intrusive thoughts effectively.
+          </p>
+          <Button href="/topics/intrusive-thoughts/strategies" variant="primary" class="w-full">
+            View Strategies
+          </Button>
+        </Card>
+
+        <Card
+          title="Common Myths"
+          icon="💡"
+          variant="highlighted"
+          class="hover-lift"
+        >
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Debunk misconceptions and understand the truth about intrusive thoughts.
+          </p>
+          <Button href="/topics/intrusive-thoughts/myths" variant="primary" class="w-full">
+            Debunk Myths
+          </Button>
+        </Card>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="Remember"
+    bgColor="bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10"
+    centerContent={true}
+  >
+    <div class="max-w-3xl mx-auto">
+      <Card
+        title="You Are Not Your Thoughts"
+        icon="💚"
+        variant="minimal"
+        class="text-center"
+      >
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>
+            Having intrusive thoughts doesn't mean you want to act on them or that they reflect your true desires. They're often the opposite of what you value most.
+          </p>
+          <p>
+            The distress you feel about these thoughts is actually a good sign - it shows that they go against your values and character.
+          </p>
+        </div>
+        <div class="mt-6 flex flex-col sm:flex-row justify-center gap-4">
+          <Button href="/topics" variant="secondary">
+            Explore Other Topics
+          </Button>
+          <Button href="/resources" variant="outline">
+            Professional Help
+          </Button>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <Footer slot="footer" />
+</MainLayout>

@@ -7,10 +7,58 @@ const { pathname } = Astro.url;
 // Remove current language from path to get the base path
 const pathWithoutLang = pathname.replace(/^\/[a-z]{2}/, '') || '/';
 
+// Define route mappings between languages
+const routeMappings: Record<string, Record<string, string>> = {
+  // English to Spanish mappings
+  '/': { es: '/es' },
+  '/topics': { es: '/es/topics' },
+  '/topics/self-esteem': { es: '/es/topics/autoestima' },
+  '/topics/intrusive-thoughts': { es: '/es/topics/intrusive-thoughts' },
+  '/topics/intrusive-thoughts/causes': { es: '/es/topics/intrusive-thoughts/causes' },
+  '/topics/intrusive-thoughts/strategies': { es: '/es/topics/intrusive-thoughts/strategies' },
+  '/topics/intrusive-thoughts/myths': { es: '/es/topics/intrusive-thoughts/myths' },
+  '/resources': { es: '/es/resources' },
+  // Spanish to English mappings
+  '/es': { en: '/' },
+  '/es/topics': { en: '/topics' },
+  '/es/topics/autoestima': { en: '/topics/self-esteem' },
+  '/es/topics/intrusive-thoughts': { en: '/topics/intrusive-thoughts' },
+  '/es/topics/intrusive-thoughts/causes': { en: '/topics/intrusive-thoughts/causes' },
+  '/es/topics/intrusive-thoughts/strategies': { en: '/topics/intrusive-thoughts/strategies' },
+  '/es/topics/intrusive-thoughts/myths': { en: '/topics/intrusive-thoughts/myths' },
+  '/es/resources': { en: '/resources' },
+  '/es/causas': { en: '/topics/intrusive-thoughts/causes' },
+  '/es/estrategias': { en: '/topics/intrusive-thoughts/strategies' },
+  '/es/mitos': { en: '/topics/intrusive-thoughts/myths' },
+  '/es/recursos': { en: '/resources' },
+  '/es/tipos': { en: '/topics/intrusive-thoughts' },
+  '/es/types': { en: '/topics/intrusive-thoughts' },
+  '/es/strategies': { en: '/topics/intrusive-thoughts/strategies' },
+  // Legacy routes for backwards compatibility
+  '/types': { en: '/topics/intrusive-thoughts', es: '/es/topics/intrusive-thoughts' },
+  '/causes': { en: '/topics/intrusive-thoughts/causes', es: '/es/topics/intrusive-thoughts/causes' },
+  '/strategies': { en: '/topics/intrusive-thoughts/strategies', es: '/es/topics/intrusive-thoughts/strategies' },
+  '/myths': { en: '/topics/intrusive-thoughts/myths', es: '/es/topics/intrusive-thoughts/myths' },
+  '/causas': { en: '/topics/intrusive-thoughts/causes', es: '/es/topics/intrusive-thoughts/causes' },
+  '/estrategias': { en: '/topics/intrusive-thoughts/strategies', es: '/es/topics/intrusive-thoughts/strategies' },
+  '/mitos': { en: '/topics/intrusive-thoughts/myths', es: '/es/topics/intrusive-thoughts/myths' },
+  '/recursos': { en: '/resources', es: '/es/resources' },
+  '/tipos': { en: '/topics/intrusive-thoughts', es: '/es/topics/intrusive-thoughts' },
+  '/cierre': { en: '/', es: '/es' },
+};
+
 // Generate URLs for each language
 const languageUrls = Object.keys(languages).map(langCode => {
   const isDefaultLang = langCode === 'en';
-  const href = isDefaultLang ? pathWithoutLang : `/${langCode}${pathWithoutLang}`;
+  let href: string;
+
+  // Check if we have a specific mapping for this route
+  if (routeMappings[pathname] && routeMappings[pathname][langCode]) {
+    href = routeMappings[pathname][langCode];
+  } else {
+    // Fallback to home page if no mapping exists
+    href = isDefaultLang ? '/' : `/${langCode}`;
+  }
 
   return {
     code: langCode,

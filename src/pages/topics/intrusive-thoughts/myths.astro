@@ -1,0 +1,164 @@
+---
+import MainLayout from "../../../layouts/MainLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import Hero from "../../../components/Hero.astro";
+import Section from "../../../components/Section.astro";
+import Card from "../../../components/Card.astro";
+import Button from "../../../components/Button.astro";
+---
+
+<MainLayout title="Common Myths - Quiet the Mind">
+  <Header slot="header" />
+
+  <Hero
+    title="Debunking Common Myths ✨"
+    subtitle="Let's separate fact from fiction about intrusive thoughts and mental health."
+  />
+
+  <Section
+    title="Myth vs. Reality"
+    subtitle="Understanding the truth can reduce shame and self-blame:"
+  >
+    <div class="space-y-8 max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-6">
+        <Card
+          title="MYTH: 'I must be crazy'"
+          icon="❌"
+          class="border-red-200 dark:border-red-800"
+        >
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Having intrusive thoughts means there's something seriously wrong with my mental health.
+          </p>
+        </Card>
+        <Card
+          title="REALITY: You're completely normal"
+          icon="✅"
+          class="border-green-200 dark:border-green-800"
+        >
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Studies show that 94% of people experience intrusive thoughts. They're a normal part of human cognition.
+          </p>
+        </Card>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <Card
+          title="MYTH: 'Thoughts predict actions'"
+          icon="❌"
+          class="border-red-200 dark:border-red-800"
+        >
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Having violent or disturbing thoughts means I'm likely to act on them.
+          </p>
+        </Card>
+        <Card
+          title="REALITY: Thoughts ≠ Actions"
+          icon="✅"
+          class="border-green-200 dark:border-green-800"
+        >
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            People with intrusive thoughts are actually LESS likely to act on them because they find them so distressing.
+          </p>
+        </Card>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <Card
+          title="MYTH: 'I should control all thoughts'"
+          icon="❌"
+          class="border-red-200 dark:border-red-800"
+        >
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Healthy people can control what they think about all the time.
+          </p>
+        </Card>
+        <Card
+          title="REALITY: Thoughts are involuntary"
+          icon="✅"
+          class="border-green-200 dark:border-green-800"
+        >
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            No one can control every thought. The human mind naturally generates thousands of thoughts daily.
+          </p>
+        </Card>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <Card
+          title="MYTH: 'Ignoring them works'"
+          icon="❌"
+          class="border-red-200 dark:border-red-800"
+        >
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            If I just ignore intrusive thoughts, they'll go away on their own.
+          </p>
+        </Card>
+        <Card
+          title="REALITY: Acceptance works better"
+          icon="✅"
+          class="border-green-200 dark:border-green-800"
+        >
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Trying to suppress thoughts often makes them stronger. Acknowledging them without judgment is more effective.
+          </p>
+        </Card>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <Card
+          title="MYTH: 'They mean something deep'"
+          icon="❌"
+          class="border-red-200 dark:border-red-800"
+        >
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Intrusive thoughts reveal hidden desires or suppress true feelings.
+          </p>
+        </Card>
+        <Card
+          title="REALITY: They're just mental noise"
+          icon="✅"
+          class="border-green-200 dark:border-green-800"
+        >
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Intrusive thoughts are random mental events, like background noise. They don't reveal anything meaningful about you.
+          </p>
+        </Card>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="The Truth About Recovery"
+    bgColor="bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10"
+    centerContent={true}
+  >
+    <div class="max-w-3xl mx-auto">
+      <Card
+        title="Knowledge is Power"
+        icon="💡"
+        variant="minimal"
+        class="text-center"
+      >
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>
+            Understanding these myths helps break the cycle of shame and fear that often makes intrusive thoughts worse.
+          </p>
+          <p>
+            Recovery isn't about eliminating intrusive thoughts completely - it's about changing your relationship with them so they no longer control your life.
+          </p>
+        </div>
+        <div class="mt-6 flex flex-col sm:flex-row justify-center gap-4">
+          <Button href="/topics/intrusive-thoughts/strategies" variant="primary">
+            Learn Coping Strategies
+          </Button>
+          <Button href="/topics/intrusive-thoughts" variant="secondary">
+            Back to Overview
+          </Button>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <Footer slot="footer" />
+</MainLayout>

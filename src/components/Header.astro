@@ -1,46 +1,63 @@
 ---
-import LanguageSwitcher from './LanguageSwitcher.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const { pathname } = Astro.url;
 
 // Remove language prefix for comparison
-const cleanPath = pathname.replace(/^\/[a-z]{2}/, '') || '/';
+const cleanPath = pathname.replace(/^\/[a-z]{2}/, "") || "/";
 
 const navLinks = [
-  { href: "/", label: t('nav.home') },
-  { href: "/resources", label: t('nav.resources') },
+  { href: "/", label: t("nav.home") },
+  { href: "/resources", label: t("nav.resources") },
 ];
 
 const topicLinks = [
-  { href: "/topics/intrusive-thoughts", label: "Intrusive Thoughts", description: "Understanding unwanted thoughts" },
-  { href: "/topics/self-esteem", label: t('nav.self_esteem'), description: "Building healthy self-worth" },
+  {
+    href: "/topics/intrusive-thoughts",
+    label: t("nav.intrusive_thoughts.title"),
+    description: t("nav.intrusive_thoughts.description"),
+  },
+  {
+    href: "/topics/self-esteem",
+    label: t("nav.self_esteem.title"),
+    description: t("nav.self_esteem.description"),
+  },
 ];
 
 // Adjust hrefs based on current language
-const localizedNavLinks = navLinks.map(link => ({
+const localizedNavLinks = navLinks.map((link) => ({
   ...link,
-  href: lang === 'en' ? link.href : `/${lang}${link.href}`
+  href: lang === "en" ? link.href : `/${lang}${link.href}`,
 }));
 
-const localizedTopicLinks = topicLinks.map(link => ({
+const localizedTopicLinks = topicLinks.map((link) => ({
   ...link,
-  href: lang === 'en' ? link.href : `/${lang}${link.href}`
+  href: lang === "en" ? link.href : `/${lang}${link.href}`,
 }));
 ---
 
-<header class="bg-white/80 backdrop-blur-md border-b border-gray-200 dark:bg-gray-900/80 dark:border-gray-700 sticky top-0 z-50">
+<header
+  class="bg-white/80 backdrop-blur-md border-b border-gray-200 dark:bg-gray-900/80 dark:border-gray-700 sticky top-0 z-50"
+>
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center py-4">
       <!-- Logo/Brand -->
-      <a href={lang === 'en' ? '/' : `/${lang}`} class="flex items-center space-x-3 group">
-        <div class="text-2xl transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
+      <a
+        href={lang === "en" ? "/" : `/${lang}`}
+        class="flex items-center space-x-3 group"
+      >
+        <div
+          class="text-2xl transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
+        >
           🧘‍♂️
         </div>
         <div>
-          <h1 class="text-xl font-bold text-gray-900 dark:text-white leading-tight">
+          <h1
+            class="text-xl font-bold text-gray-900 dark:text-white leading-tight"
+          >
             Quiet the Mind
           </h1>
           <p class="text-xs text-gray-600 dark:text-gray-400 font-medium">
@@ -51,18 +68,21 @@ const localizedTopicLinks = topicLinks.map(link => ({
 
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex space-x-8 items-center">
-        {localizedNavLinks.map(({ href, label }) => (
-          <a
-            href={href}
-            class={`text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${
-              cleanPath === href.replace(/^\/[a-z]{2}/, '') || (cleanPath === '/' && href.endsWith('/'))
-                ? 'text-blue-600 dark:text-blue-400'
-                : 'text-gray-700 dark:text-gray-300'
-            }`}
-          >
-            {label}
-          </a>
-        ))}
+        {
+          localizedNavLinks.map(({ href, label }) => (
+            <a
+              href={href}
+              class={`text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${
+                cleanPath === href.replace(/^\/[a-z]{2}/, "") ||
+                (cleanPath === "/" && href.endsWith("/"))
+                  ? "text-blue-600 dark:text-blue-400"
+                  : "text-gray-700 dark:text-gray-300"
+              }`}
+            >
+              {label}
+            </a>
+          ))
+        }
 
         <!-- Topics Dropdown -->
         <div class="relative group">
@@ -70,34 +90,49 @@ const localizedTopicLinks = topicLinks.map(link => ({
             class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center space-x-1"
             aria-label="Topics menu"
           >
-            <span>{t('nav.topics')}</span>
-            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            <span>{t("nav.topics")}</span>
+            <svg
+              class="w-4 h-4 transition-transform group-hover:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
 
           <!-- Dropdown Menu -->
-          <div class="absolute right-0 mt-2 w-64 max-w-xs bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <div
+            class="absolute right-0 mt-2 w-64 max-w-xs bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+          >
             <div class="py-2">
-              {localizedTopicLinks.map(({ href, label, description }) => (
+              {
+                localizedTopicLinks.map(({ href, label, description }) => (
+                  <a
+                    href={href}
+                    class="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                  >
+                    <div class="font-medium text-gray-900 dark:text-gray-100 text-sm">
+                      {label}
+                    </div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                      {description}
+                    </div>
+                  </a>
+                ))
+              }
+              <div
+                class="border-t border-gray-200 dark:border-gray-600 mt-2 pt-2"
+              >
                 <a
-                  href={href}
-                  class="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
-                >
-                  <div class="font-medium text-gray-900 dark:text-gray-100 text-sm">
-                    {label}
-                  </div>
-                  <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                    {description}
-                  </div>
-                </a>
-              ))}
-              <div class="border-t border-gray-200 dark:border-gray-600 mt-2 pt-2">
-                <a
-                  href={lang === 'en' ? '/topics' : `/${lang}/topics`}
+                  href={lang === "en" ? "/topics" : `/${lang}/topics`}
                   class="block px-4 py-2 text-sm text-blue-600 dark:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors font-medium"
                 >
-                  View All Topics →
+                  {t("nav.topics.view-all")}
                 </a>
               </div>
             </div>
@@ -113,8 +148,17 @@ const localizedTopicLinks = topicLinks.map(link => ({
         class="md:hidden p-2 rounded-lg text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
         aria-label="Toggle menu"
       >
-        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M4 6h16M4 12h16M4 18h16" />
+        <svg
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width={2}
+            d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
     </div>
@@ -122,18 +166,21 @@ const localizedTopicLinks = topicLinks.map(link => ({
     <!-- Mobile Navigation -->
     <div id="mobile-menu" class="md:hidden hidden pb-4">
       <div class="space-y-2">
-        {localizedNavLinks.map(({ href, label }) => (
-          <a
-            href={href}
-            class={`block px-3 py-2 rounded-lg text-base font-medium transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 ${
-              cleanPath === href.replace(/^\/[a-z]{2}/, '') || (cleanPath === '/' && href.endsWith('/'))
-                ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-800'
-                : 'text-gray-700 dark:text-gray-300'
-            }`}
-          >
-            {label}
-          </a>
-        ))}
+        {
+          localizedNavLinks.map(({ href, label }) => (
+            <a
+              href={href}
+              class={`block px-3 py-2 rounded-lg text-base font-medium transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 ${
+                cleanPath === href.replace(/^\/[a-z]{2}/, "") ||
+                (cleanPath === "/" && href.endsWith("/"))
+                  ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-800"
+                  : "text-gray-700 dark:text-gray-300"
+              }`}
+            >
+              {label}
+            </a>
+          ))
+        }
 
         <!-- Mobile Topics Section -->
         <div class="py-2">
@@ -141,28 +188,40 @@ const localizedTopicLinks = topicLinks.map(link => ({
             id="mobile-topics-btn"
             class="w-full text-left px-3 py-2 rounded-lg text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center justify-between"
           >
-            <span>{t('nav.topics')}</span>
-            <svg id="mobile-topics-icon" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            <span>{t("nav.topics")}</span>
+            <svg
+              id="mobile-topics-icon"
+              class="w-4 h-4 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
 
           <div id="mobile-topics-menu" class="hidden pl-4 space-y-1 mt-2">
-            {localizedTopicLinks.map(({ href, label, description }) => (
-              <a
-                href={href}
-                class="block px-3 py-2 rounded-lg text-sm transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
-              >
-                <div class="font-medium text-gray-700 dark:text-gray-300">
-                  {label}
-                </div>
-                <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                  {description}
-                </div>
-              </a>
-            ))}
+            {
+              localizedTopicLinks.map(({ href, label, description }) => (
+                <a
+                  href={href}
+                  class="block px-3 py-2 rounded-lg text-sm transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+                >
+                  <div class="font-medium text-gray-700 dark:text-gray-300">
+                    {label}
+                  </div>
+                  <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                    {description}
+                  </div>
+                </a>
+              ))
+            }
             <a
-              href={lang === 'en' ? '/topics' : `/${lang}/topics`}
+              href={lang === "en" ? "/topics" : `/${lang}/topics`}
               class="block px-3 py-2 rounded-lg text-sm text-blue-600 dark:text-blue-400 font-medium transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
             >
               View All Topics →
@@ -179,22 +238,22 @@ const localizedTopicLinks = topicLinks.map(link => ({
 </header>
 
 <script>
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileTopicsBtn = document.getElementById('mobile-topics-btn');
-  const mobileTopicsMenu = document.getElementById('mobile-topics-menu');
-  const mobileTopicsIcon = document.getElementById('mobile-topics-icon');
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const mobileTopicsBtn = document.getElementById("mobile-topics-btn");
+  const mobileTopicsMenu = document.getElementById("mobile-topics-menu");
+  const mobileTopicsIcon = document.getElementById("mobile-topics-icon");
 
   if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
     });
   }
 
   if (mobileTopicsBtn && mobileTopicsMenu && mobileTopicsIcon) {
-    mobileTopicsBtn.addEventListener('click', () => {
-      mobileTopicsMenu.classList.toggle('hidden');
-      mobileTopicsIcon.classList.toggle('rotate-180');
+    mobileTopicsBtn.addEventListener("click", () => {
+      mobileTopicsMenu.classList.toggle("hidden");
+      mobileTopicsIcon.classList.toggle("rotate-180");
     });
   }
 </script>

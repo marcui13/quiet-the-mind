@@ -19,7 +19,11 @@ export const ui = {
     'nav.resources': 'Resources',
     'nav.conclusion': 'Conclusion',
     'nav.topics': 'Topics',
-    'nav.self_esteem': 'Self-Esteem',
+    'nav.topics.view-all': 'View All →',
+    'nav.intrusive_thoughts.title': 'Intrusive Thoughts',
+    'nav.intrusive_thoughts.description': 'Understanding unwanted thoughts',
+    'nav.self_esteem.title': 'Self-Esteem',
+    'nav.self_esteem.description': 'Building healthy self-worth',
 
     // Home page
     'home.hero.title': 'Quiet the Mind 🧘‍♂️',
@@ -138,7 +142,11 @@ export const ui = {
     'nav.resources': 'Recursos',
     'nav.conclusion': 'Cierre',
     'nav.topics': 'Tópicos',
-    'nav.self_esteem': 'Autoestima',
+    'nav.topics.view-all': 'Ver Todos →',
+    'nav.intrusive_thoughts.title': 'Pensamientos Intrusivos',
+    'nav.intrusive_thoughts.description': 'Entendiendo los pensamientos no deseados',
+    'nav.self_esteem.title': 'Autoestima',
+    'nav.self_esteem.description': 'Desarrollar una autoestima saludable',
 
     // Home page
     'home.hero.title': 'Quiet the Mind 🧘‍♂️',

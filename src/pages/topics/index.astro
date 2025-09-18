@@ -1,0 +1,179 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Hero from "../../components/Hero.astro";
+import Section from "../../components/Section.astro";
+import Card from "../../components/Card.astro";
+import Button from "../../components/Button.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<MainLayout title="Topics - Quiet the Mind">
+  <Header slot="header" />
+
+  <!-- Hero Section -->
+  <Hero
+    title="Mental Wellness Topics 📚"
+    subtitle="Explore various topics about mental health, emotional well-being, and personal development."
+  />
+
+  <!-- Topics Section -->
+  <Section
+    title="Available Topics"
+    subtitle="Choose a topic that interests you and start your journey towards better mental wellness."
+    centerContent={true}
+  >
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Intrusive Thoughts Topic -->
+        <Card
+          title="Intrusive Thoughts 💭"
+          icon="🌪️"
+          variant="highlighted"
+          class="hover-lift"
+        >
+          <div class="space-y-4">
+            <p class="text-gray-600 dark:text-gray-300">
+              Understanding and managing unwanted thoughts that suddenly appear in our minds. Learn about types, causes, and effective coping strategies.
+            </p>
+            <div class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+              <div class="flex items-center space-x-2">
+                <span>📋</span>
+                <span>Types of intrusive thoughts</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span>🔍</span>
+                <span>Causes and triggers</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span>🛠️</span>
+                <span>Coping strategies</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span>❌</span>
+                <span>Common myths debunked</span>
+              </div>
+            </div>
+            <div class="pt-4">
+              <Button href="/types" variant="primary" class="w-full">
+                {t("button.explore_topic")}
+              </Button>
+            </div>
+          </div>
+        </Card>
+
+        <!-- Self-Esteem Topic -->
+        <Card
+          title="Self-Esteem & Quality of Life ✨"
+          icon="🌟"
+          variant="highlighted"
+          class="hover-lift"
+        >
+          <div class="space-y-4">
+            <p class="text-gray-600 dark:text-gray-300">
+              Discover how self-esteem impacts your life quality and learn practical ways to build both your own and others' self-worth through meaningful connections.
+            </p>
+            <div class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+              <div class="flex items-center space-x-2">
+                <span>🤝</span>
+                <span>Self-esteem and relationships</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span>🫶</span>
+                <span>The power of acceptance</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span>🙏</span>
+                <span>Appreciation and gratitude</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span>👂</span>
+                <span>Active listening skills</span>
+              </div>
+            </div>
+            <div class="pt-4">
+              <Button href="/topics/self-esteem" variant="primary" class="w-full">
+                {t("button.explore_topic")}
+              </Button>
+            </div>
+          </div>
+        </Card>
+
+      </div>
+
+      <!-- Coming Soon Section -->
+      <div class="mt-16">
+        <h3 class="text-2xl font-bold text-center text-gray-800 dark:text-gray-200 mb-8">
+          Coming Soon 🚀
+        </h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <Card
+            title="Mindfulness & Meditation 🧘‍♀️"
+            icon="🌸"
+            variant="minimal"
+            class="opacity-60"
+          >
+            <p class="text-gray-500 dark:text-gray-400 text-sm">
+              Practical techniques for mindfulness and meditation to achieve inner peace and mental clarity.
+            </p>
+          </Card>
+          <Card
+            title="Anxiety Management 😰"
+            icon="🌊"
+            variant="minimal"
+            class="opacity-60"
+          >
+            <p class="text-gray-500 dark:text-gray-400 text-sm">
+              Comprehensive guide to understanding and managing anxiety in daily life.
+            </p>
+          </Card>
+          <Card
+            title="Emotional Intelligence 💚"
+            icon="🧠"
+            variant="minimal"
+            class="opacity-60"
+          >
+            <p class="text-gray-500 dark:text-gray-400 text-sm">
+              Develop your emotional intelligence to improve relationships and personal well-being.
+            </p>
+          </Card>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Getting Started Section -->
+  <Section
+    title="Start Your Journey 🌱"
+    bgColor="bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10"
+    centerContent={true}
+  >
+    <div class="max-w-3xl mx-auto">
+      <Card
+        title="New to Mental Wellness?"
+        icon="🤝"
+        variant="minimal"
+        class="text-center"
+      >
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          If you're new to mental wellness topics, we recommend starting with intrusive thoughts to understand how our minds work, then exploring self-esteem to build healthier relationships with yourself and others.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <Button href="/types" variant="secondary">
+            Start with Intrusive Thoughts
+          </Button>
+          <Button href="/resources" variant="outline">
+            Professional Resources
+          </Button>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <Footer slot="footer" />
+</MainLayout>

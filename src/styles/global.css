@@ -223,7 +223,7 @@ html {
 
 /* Intersection Observer trigger for animations */
 .animate-on-scroll {
-  opacity: 0;
+  opacity: 1; /* Default visible state */
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
@@ -231,6 +231,12 @@ html {
 .animate-on-scroll.in-view {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Fallback for cards - ensure they're always visible */
+.card-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 /* Responsive typography improvements */

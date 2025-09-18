@@ -83,8 +83,11 @@ const t = useTranslations(lang);
         />
       </div>
 
-      <div class="pt-8">
-        <Button href="/types" variant="primary" size="lg">
+      <div class="pt-8 flex flex-col sm:flex-row justify-center gap-4">
+        <Button href="/topics" variant="primary" size="lg">
+          Explore All Topics
+        </Button>
+        <Button href="/types" variant="secondary" size="lg">
           {t("home.objective.cta")}
         </Button>
       </div>

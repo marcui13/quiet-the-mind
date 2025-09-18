@@ -1,0 +1,179 @@
+---
+import MainLayout from "../../../layouts/MainLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import Hero from "../../../components/Hero.astro";
+import Section from "../../../components/Section.astro";
+import Card from "../../../components/Card.astro";
+import Button from "../../../components/Button.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<MainLayout title="Tópicos - Quiet the Mind">
+  <Header slot="header" />
+
+  <!-- Hero Section -->
+  <Hero
+    title="Tópicos de Bienestar Mental 📚"
+    subtitle="Explora diversos temas sobre salud mental, bienestar emocional y desarrollo personal."
+  />
+
+  <!-- Topics Section -->
+  <Section
+    title="Tópicos Disponibles"
+    subtitle="Elige un tema que te interese y comienza tu camino hacia un mejor bienestar mental."
+    centerContent={true}
+  >
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Pensamientos Intrusivos -->
+        <Card
+          title="Pensamientos Intrusivos 💭"
+          icon="🌪️"
+          variant="highlighted"
+          class="hover-lift"
+        >
+          <div class="space-y-4">
+            <p class="text-gray-600 dark:text-gray-300">
+              Comprende y gestiona los pensamientos no deseados que aparecen súbitamente en nuestra mente. Aprende sobre tipos, causas y estrategias efectivas de manejo.
+            </p>
+            <div class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+              <div class="flex items-center space-x-2">
+                <span>📋</span>
+                <span>Tipos de pensamientos intrusivos</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span>🔍</span>
+                <span>Causas y desencadenantes</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span>🛠️</span>
+                <span>Estrategias de manejo</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span>❌</span>
+                <span>Mitos comunes desmentidos</span>
+              </div>
+            </div>
+            <div class="pt-4">
+              <Button href="/es/types" variant="primary" class="w-full">
+                {t("button.explore_topic")}
+              </Button>
+            </div>
+          </div>
+        </Card>
+
+        <!-- Autoestima -->
+        <Card
+          title="Autoestima y Calidad de Vida ✨"
+          icon="🌟"
+          variant="highlighted"
+          class="hover-lift"
+        >
+          <div class="space-y-4">
+            <p class="text-gray-600 dark:text-gray-300">
+              Descubre cómo la autoestima impacta la calidad de tu vida y aprende formas prácticas de construir tanto tu propia autoestima como la de otros a través de conexiones significativas.
+            </p>
+            <div class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+              <div class="flex items-center space-x-2">
+                <span>🤝</span>
+                <span>Autoestima y relaciones</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span>🫶</span>
+                <span>El poder de la aceptación</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span>🙏</span>
+                <span>Aprecio y gratitud</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span>👂</span>
+                <span>Habilidades de escucha activa</span>
+              </div>
+            </div>
+            <div class="pt-4">
+              <Button href="/es/topics/autoestima" variant="primary" class="w-full">
+                {t("button.explore_topic")}
+              </Button>
+            </div>
+          </div>
+        </Card>
+
+      </div>
+
+      <!-- Próximamente -->
+      <div class="mt-16">
+        <h3 class="text-2xl font-bold text-center text-gray-800 dark:text-gray-200 mb-8">
+          Próximamente 🚀
+        </h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <Card
+            title="Mindfulness y Meditación 🧘‍♀️"
+            icon="🌸"
+            variant="minimal"
+            class="opacity-60"
+          >
+            <p class="text-gray-500 dark:text-gray-400 text-sm">
+              Técnicas prácticas de mindfulness y meditación para lograr paz interior y claridad mental.
+            </p>
+          </Card>
+          <Card
+            title="Manejo de la Ansiedad 😰"
+            icon="🌊"
+            variant="minimal"
+            class="opacity-60"
+          >
+            <p class="text-gray-500 dark:text-gray-400 text-sm">
+              Guía completa para entender y manejar la ansiedad en la vida diaria.
+            </p>
+          </Card>
+          <Card
+            title="Inteligencia Emocional 💚"
+            icon="🧠"
+            variant="minimal"
+            class="opacity-60"
+          >
+            <p class="text-gray-500 dark:text-gray-400 text-sm">
+              Desarrolla tu inteligencia emocional para mejorar las relaciones y el bienestar personal.
+            </p>
+          </Card>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Sección Comenzar -->
+  <Section
+    title="Comienza tu Camino 🌱"
+    bgColor="bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10"
+    centerContent={true}
+  >
+    <div class="max-w-3xl mx-auto">
+      <Card
+        title="¿Nuevo en Bienestar Mental?"
+        icon="🤝"
+        variant="minimal"
+        class="text-center"
+      >
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          Si eres nuevo en temas de bienestar mental, recomendamos comenzar con pensamientos intrusivos para entender cómo funciona nuestra mente, luego explorar autoestima para construir relaciones más saludables contigo mismo y con otros.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <Button href="/es/types" variant="secondary">
+            Comenzar con Pensamientos Intrusivos
+          </Button>
+          <Button href="/es/recursos" variant="outline">
+            Recursos Profesionales
+          </Button>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <Footer slot="footer" />
+</MainLayout>

@@ -1,0 +1,265 @@
+---
+import MainLayout from "../../../layouts/MainLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import Hero from "../../../components/Hero.astro";
+import Section from "../../../components/Section.astro";
+import Card from "../../../components/Card.astro";
+import Button from "../../../components/Button.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<MainLayout title={t("self_esteem.hero.title")}>
+  <Header slot="header" />
+
+  <!-- Hero Section -->
+  <Hero
+    title={t("self_esteem.hero.title")}
+    subtitle={t("self_esteem.hero.subtitle")}
+  />
+
+  <!-- Part 1: Self-Esteem and Quality of Life -->
+  <Section
+    id="part1"
+    title={t("self_esteem.part1.title")}
+    subtitle={t("self_esteem.part1.description")}
+    centerContent={true}
+  >
+    <div class="max-w-4xl mx-auto space-y-8">
+      <div class="mx-auto text-center space-y-6">
+        <p class="text-xl text-gray-800 dark:text-gray-200 leading-relaxed font-medium">
+          {t("self_esteem.part1.content1")}
+        </p>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          {t("self_esteem.part1.content2")}
+        </p>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          {t("self_esteem.part1.content3")}
+        </p>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          {t("self_esteem.part1.content4")}
+        </p>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          {t("self_esteem.part1.content5")}
+        </p>
+      </div>
+
+      <!-- Key Quotes -->
+      <div class="grid md:grid-cols-2 gap-6 mt-12">
+        <Card
+          icon="💡"
+          variant="minimal"
+          class="text-center bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 border border-blue-200 dark:border-blue-700"
+        >
+          <blockquote class="text-lg italic text-gray-800 dark:text-gray-200 mb-4 font-medium">
+            {t("self_esteem.part1.quote1")}
+          </blockquote>
+        </Card>
+        <Card
+          icon="🌟"
+          variant="minimal"
+          class="text-center bg-gradient-to-br from-green-50 to-blue-50 dark:from-green-900/30 dark:to-blue-900/30 border border-green-200 dark:border-green-700"
+        >
+          <blockquote class="text-lg italic text-gray-800 dark:text-gray-200 mb-4 font-medium">
+            {t("self_esteem.part1.quote2")}
+          </blockquote>
+        </Card>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Part 2: How to Develop Self-Esteem in Others -->
+  <Section
+    id="part2"
+    title={t("self_esteem.part2.title")}
+    subtitle={t("self_esteem.part2.description")}
+    bgColor="bg-gray-50 dark:bg-gray-800"
+    centerContent={true}
+  >
+    <div class="max-w-6xl mx-auto space-y-12">
+
+      <!-- 1. Acceptance -->
+      <Card
+        title={t("self_esteem.part2.acceptance.title")}
+        icon="🫶"
+        variant="highlighted"
+        class="bg-white dark:bg-gray-900"
+      >
+        <div class="space-y-4 text-gray-700 dark:text-gray-200">
+          <p class="text-lg">
+            {t("self_esteem.part2.acceptance.content1")}
+          </p>
+          <p>
+            {t("self_esteem.part2.acceptance.content2")}
+          </p>
+          <p>
+            {t("self_esteem.part2.acceptance.content3")}
+          </p>
+          <div class="mt-6 space-y-3">
+            <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg border border-blue-200 dark:border-blue-700">
+              <p class="text-sm font-medium text-blue-900 dark:text-blue-200">
+                📌 {t("self_esteem.part2.acceptance.quote")}
+              </p>
+            </div>
+            <div class="bg-green-50 dark:bg-green-900/30 p-4 rounded-lg border border-green-200 dark:border-green-700">
+              <p class="text-sm font-medium text-green-900 dark:text-green-200">
+                📖 {t("self_esteem.part2.acceptance.reference")}
+              </p>
+            </div>
+          </div>
+        </div>
+      </Card>
+
+      <!-- 2. Appreciation -->
+      <Card
+        title={t("self_esteem.part2.appreciation.title")}
+        icon="🙏"
+        variant="highlighted"
+        class="bg-white dark:bg-gray-900"
+      >
+        <div class="space-y-4 text-gray-700 dark:text-gray-200">
+          <p class="text-lg">
+            {t("self_esteem.part2.appreciation.content1")}
+          </p>
+          <p>
+            {t("self_esteem.part2.appreciation.content2")}
+          </p>
+          <p>
+            {t("self_esteem.part2.appreciation.content3")}
+          </p>
+          <div class="mt-6 space-y-3">
+            <div class="bg-yellow-50 dark:bg-yellow-900/30 p-4 rounded-lg border border-yellow-200 dark:border-yellow-700">
+              <p class="text-sm font-medium text-yellow-900 dark:text-yellow-200">
+                {t("self_esteem.part2.appreciation.example")}
+              </p>
+            </div>
+            <div class="bg-green-50 dark:bg-green-900/30 p-4 rounded-lg border border-green-200 dark:border-green-700">
+              <p class="text-sm font-medium text-green-900 dark:text-green-200">
+                {t("self_esteem.part2.appreciation.tip")}
+              </p>
+            </div>
+          </div>
+        </div>
+      </Card>
+
+      <!-- 3. Approval and Admiration -->
+      <Card
+        title={t("self_esteem.part2.approval.title")}
+        icon="👏"
+        variant="highlighted"
+        class="bg-white dark:bg-gray-900"
+      >
+        <div class="space-y-4 text-gray-700 dark:text-gray-200">
+          <p class="text-lg">
+            {t("self_esteem.part2.approval.content1")}
+          </p>
+          <p>
+            {t("self_esteem.part2.approval.content2")}
+          </p>
+          <p>
+            {t("self_esteem.part2.approval.content3")}
+          </p>
+          <div class="mt-6 space-y-3">
+            <div class="bg-purple-50 dark:bg-purple-900/30 p-4 rounded-lg border border-purple-200 dark:border-purple-700">
+              <p class="text-sm font-medium text-purple-900 dark:text-purple-200">
+                {t("self_esteem.part2.approval.example")}
+              </p>
+            </div>
+            <div class="bg-green-50 dark:bg-green-900/30 p-4 rounded-lg border border-green-200 dark:border-green-700 space-y-2">
+              <p class="text-sm font-medium text-green-900 dark:text-green-200">
+                {t("self_esteem.part2.approval.tip1")}
+              </p>
+              <p class="text-sm font-medium text-green-900 dark:text-green-200">
+                {t("self_esteem.part2.approval.tip2")}
+              </p>
+            </div>
+          </div>
+        </div>
+      </Card>
+
+      <!-- 4. Attention -->
+      <Card
+        title={t("self_esteem.part2.attention.title")}
+        icon="👂"
+        variant="highlighted"
+        class="bg-white dark:bg-gray-900"
+      >
+        <div class="space-y-4 text-gray-700 dark:text-gray-200">
+          <p class="text-lg">
+            {t("self_esteem.part2.attention.content1")}
+          </p>
+          <p>
+            {t("self_esteem.part2.attention.content2")}
+          </p>
+
+          <div class="mt-6">
+            <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">
+              {t("self_esteem.part2.attention.keys")}
+            </h4>
+            <div class="space-y-3">
+              <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg border border-blue-200 dark:border-blue-700">
+                <p class="text-sm font-medium text-blue-900 dark:text-blue-200">
+                  {t("self_esteem.part2.attention.key1")}
+                </p>
+              </div>
+              <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg border border-indigo-200 dark:border-indigo-700">
+                <p class="text-sm font-medium text-indigo-900 dark:text-indigo-200">
+                  {t("self_esteem.part2.attention.key2")}
+                </p>
+              </div>
+              <div class="bg-purple-50 dark:bg-purple-900/30 p-4 rounded-lg border border-purple-200 dark:border-purple-700">
+                <p class="text-sm font-medium text-purple-900 dark:text-purple-200">
+                  {t("self_esteem.part2.attention.key3")}
+                </p>
+              </div>
+              <div class="bg-pink-50 dark:bg-pink-900/30 p-4 rounded-lg border border-pink-200 dark:border-pink-700">
+                <p class="text-sm font-medium text-pink-900 dark:text-pink-200">
+                  {t("self_esteem.part2.attention.key4")}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 p-4 rounded-lg">
+            <p class="text-lg font-medium text-gray-800 dark:text-gray-200">
+              {t("self_esteem.part2.attention.result")}
+            </p>
+          </div>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <!-- Navigation Section -->
+  <Section
+    title="Continue Your Journey 🌱"
+    bgColor="bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10"
+    centerContent={true}
+  >
+    <div class="max-w-3xl mx-auto">
+      <Card
+        title="Explore More Topics"
+        icon="📚"
+        variant="minimal"
+        class="text-center"
+      >
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          Continue exploring more topics about mental wellness and personal development.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <Button href="/types" variant="secondary">
+            Intrusive Thoughts
+          </Button>
+          <Button href="/strategies" variant="outline">
+            Coping Strategies
+          </Button>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <Footer slot="footer" />
+</MainLayout>
